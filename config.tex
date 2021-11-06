@@ -8,6 +8,8 @@
 \usepackage[export]{adjustbox} % loads also graphicx
 \usepackage[section]{placeins} % Floating
 \usepackage{titleps} % Layout
+\usepackage{parskip} % Remove indent on paragraphs but adds a little space
+\usepackage{tabularx} % tables
 
 % Notizen (zum Deaktivieren [disable])
 \usepackage[textwidth=25mm,textsize=footnotesize]{todonotes}
@@ -23,19 +25,15 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpagestyle{ruled}
-{\sethead{\modulname}{- \thepage\space -}{Zusammenfassung}\headrule}
+{\sethead{\modulname}{- \thepage\space -}{Projektdokumentation}\headrule}
 \pagestyle{ruled}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % Befehle
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\vorlesung}[2]{
-  \section{#1}
-  {\small \textit{Vorlesung vom #2.}}\\[0.4cm]
-}
-
 \newcommand{\image}[2]{
   \begin{figure}[!htp]
     \centering
