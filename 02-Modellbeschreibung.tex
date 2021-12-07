@@ -1,0 +1,66 @@
+\section{Modellbeschreibung}
+
+Im praktischen Teil des Unterrichts im Fach Gas und Wasserstoffversorgungssysteme sollen zukünftige Energieverteilungsmodelle für Deutschland bei verschiedenen prozentualen CO2 Reduktionen im Vergleich zu 1990 mit damals emittierten 366 Mio. t simuliert werden. 
+
+Basis der Simulationen stellt das vom Institut IEK3 des Forschungszentrums Jülichs bereitgestellten Framework „FINE“, welches die Programmiersprache Python implementiert und Energieszenarien mit Erzeugern, Verbrauchern und Speichern entwickeln und grafisch ausgeben kann.
+
+Das verwendete Modell der Bundesrepublik wird dabei in acht Zonen als sogenannte Cluster von Null bis Sieben eingeteilt, welches in der Abbildung \ref{image:DEinCluster.png} zu sehen ist.
+
+\image{DEinCluster.png}{Deutschland in 8 Cluster aufgeteilt}
+
+FINE erzeugt nach Ablauf der Simulationen automatisch die Verteilung der Energiesysteme und Kopplung durch Pipelines und Stromtrassen inklusive einer visuellen Ausgabe der Ergebnisse.
+Damit ein Vergleich der unterschiedlichen Teilnehmergruppen visualisiert und verglichen werden kann, benutzt jede Teilnehmergruppe in Ihrer Projektsimulation andere Energieversorgungs- und Verteilungskonzepte für Deutschland. Jedes Mitglied wird eine geforderte CO2 Reduktion zugewiesen, welche in den nachfolgenden Kapiteln von diesen präsentiert und erläutert werden.% In nachfolgender Tabelle XX sind die Reduktionen für die verschiedenen Simulationen zu sehen.
+
+
+\begin{table}[]
+    \begin{tabular}{|lcll|}
+        \hline
+        \multicolumn{4}{|c|}{Energiesystemdesign}                                              \\ \hline
+        \multicolumn{1}{|l|}{Erneuerbare Energie Erzeugung} & \multicolumn{1}{l|}{Wind Onshore} & \multicolumn{1}{l|}{Wind Offshore} & Photovoltaik \\ \hline
+        \multicolumn{1}{|l|}{Stromnetz AC}     & \multicolumn{3}{c|}{vorhanden}                \\ \hline
+        \multicolumn{1}{|l|}{Stromnetz DC}     & \multicolumn{3}{c|}{vorhanden}                \\ \hline
+        \multicolumn{1}{|l|}{H2 - Pipeline}    & \multicolumn{3}{c|}{vorhanden}                \\ \hline
+        \multicolumn{1}{|l|}{Endenergiebedarf} & \multicolumn{3}{c|}{Strom und Wasserstoff H2} \\ \hline
+    \end{tabular}
+    \caption{Systemdesign}
+    \label{tab:my-table}
+\end{table}
+
+
+Tabelle 2.2 zeigt das verwendete Konzept zur Simulationsausführung in FINE. Die
+Bereitstellung aus erneuerbaren Energien stellen hierbei Windkraft in On- und Offshore
+Konfiguration und Photovoltaik aus der direkten Sonnennutzung dar. Des weiteren existieren
+Stromtrassen in Gleich- und Wechselstromkonfiguration und Pipelines zum Transport des
+verwendeten Wasserstoffs zur Verfügung. Die Energieverbräuche der einzelnen Sektoren
+werden in Form von Strom und direkter H2 Nutzung simuliert. Bestehende Wasserkraft,
+Methan und Biogasanlagen werden in die Simulation mit einbezogen und der Einkauf von
+zusätzlichen Ressourcen in Form Gasförmigen Stoffen angenommen. Weil in der Realität der
+Ökonomische Gedanke stets eine Rolle spielt und keine Investitionen ohne die
+wirtschaftlichen Parameter durchgeführt werden zeigt nachfolgende Tabelle XX die
+verwendeten und kalkulierten Kosten zur Installation und Inbetriebnahme der
+Energieressourcen in Deutschland. Das Framework „FINE“ bezieht diese Kenngrößen in die
+Simulation mit ein und berechnet die Gesamten volkswirtschaftlichen Investitionskosten,
+welche zukünftig zu treffen sind. 
+
+%\image{tabelle_sonst.png}{Tabelle}
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|ccl|}
+    \hline
+    \multicolumn{3}{|c|}{Parameter für die entstehenden Kosten der Simulation}                                          \\ \hline
+    \multicolumn{1}{|c|}{\multirow{3}{*}{Wind Onshore}} & \multicolumn{1}{c|}{Investitionen} & 1,1 Mrd. € / GW Leistung \\ \cline{2-3} 
+    \multicolumn{1}{|c|}{}                              & \multicolumn{1}{c|}{Operationen}   & 22 Mio. € / GW Leistung  \\ \cline{2-3} 
+    \multicolumn{1}{|c|}{}                              & \multicolumn{1}{c|}{Lebenszyklus}  & 20 Jahre                 \\ \hline
+    \multicolumn{1}{|c|}{\multirow{3}{*}{Wind Offshore}} & \multicolumn{1}{c|}{Investitionen} & 2,3 Mrd. € / GW Leistung \\ \cline{2-3} 
+    \multicolumn{1}{|c|}{}                              & \multicolumn{1}{c|}{Operationen}   & 46 Mio. € / GW Leistung  \\ \cline{2-3} 
+    \multicolumn{1}{|c|}{}                              & \multicolumn{1}{c|}{Lebenszyklus}  & 20 Jahre                 \\ \hline
+    \multicolumn{1}{|c|}{\multirow{3}{*}{Photovoltaik}} & \multicolumn{1}{c|}{Investitionen} & 650 Mio. € / GW Leistung \\ \cline{2-3} 
+    \multicolumn{1}{|c|}{}                              & \multicolumn{1}{c|}{Operationen}   & 13 Mio. € / GW Leistung  \\ \cline{2-3} 
+    \multicolumn{1}{|c|}{}                              & \multicolumn{1}{c|}{Lebenszyklus}  & 25 Jahre                 \\ \hline
+    \multicolumn{1}{|c|}{Gas / Methan}                  & \multicolumn{1}{c|}{Kaufpreis}     & 33.100 € pro GW Leistung \\ \hline
+    \multicolumn{1}{|c|}{Biogas}                        & \multicolumn{1}{c|}{Kaufpreis}     & 54.090 € pro GW Leistung \\ \hline
+    \end{tabular}
+    \caption{entstehende Kosten}
+    \label{tab:my-table}
+    \end{table}
