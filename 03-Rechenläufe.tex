@@ -1,1 +1,11 @@
 \section{Durchführung der Rechenläufe}
+Zur Modellierung des Energiesystemmodells wurde das Framework FINE von dem Forschungszentrum Jülich eingesetzt.
+Dieses Framework ermöglicht die einfachere Erstellung eines Energiemodells mit verschiedenen Regionen und Energiearten. Alle benötigten Komponenten, wie Energiequellen, Verbraucher, Speicher, Umwandler und Netze, können mit technischen und ökonomischen Merkmalen hinzugefügt werden. 
+
+Das Framework FINE stellt das Jupyter Notebook ``Multi-regional\_Energy\_System\_Workflow.ipynb'' bereit, welches ein Energiesystem mit acht Regionen modelliert und optimiert. Das Notebook wurde entsprechend der Aufgabenstellung (siehe Kapitel TODO) angepasst.
+
+Mithilfe des Gurobi Solvers wurde das Energiesystem hinsichtlich der Kosten unter Einhaltung der zuvor gesetzen Grenze für den CO2 Ausstoß optimiert. Das Ergebnis der Optimierung ist ein optimiertes Energiesystem, bei dem in jedem Zeitschritt die Nachfrage gedeckt und die CO2 Reduktionsziel eingehalten ist. Die Ausgabe von FINE ist vielseitig. Je Komponente und Region werden unter anderem die installierte Kapazität, der ``Fahrplan'' und die daraus resultierende Kosten ausgegeben.
+
+Die Ausgabe der Optimierung wird in eine Excel-Datei exportiert, damit die Ergebnisse einfacherer analysiert und mit den Ergebnissen der anderen Reduktionsfälle verglichen werden kann. 
+
+Die Ausführung des Jupyter Notebooks für die sechs verschiedenen Reduktionsfälle wurde mithilfe eines Shell Scripts automatisiert. Das Script kopiert das Notebook, setzt das jährliche Limit für den CO2 Ausstoß entsprechend des Reduktionsfalls und führt das Notebook anschließend aus. Das Ergebnis ist eine Excel Datei je Reduktionsfall, welche anschließend zu einer übersichtlichen Excel zusammengefügt wird.
