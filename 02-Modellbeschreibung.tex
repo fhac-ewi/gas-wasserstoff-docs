@@ -1,4 +1,57 @@
 \section{Modellbeschreibung}
+In diesem Kapitel wird das Energiesystemmodell für Deutschland bestehend aus Strom- und Gasinfrastrukturen eingeführt, welches im Rahmen dieser Projektarbeit hinsichtlich der Kosten unter Berücksichtigung verschiedener CO2-Reduktionsziele für das Jahr 2050 optimiert wird. In Tabelle \ref{tab:systemdesign2} sind die verwendeten Komponenten für das Energiesystemmodell ersichtlich.
+
+\begin{table}[ht!]
+    \begin{tabular}{|lcll|}
+        \hline
+        \multicolumn{1}{|l|}{Erneuerbare Energie Erzeugung} & \multicolumn{1}{l|}{Wind Onshore} & \multicolumn{1}{l|}{Wind Offshore} & Photovoltaik \\ \hline
+        \multicolumn{1}{|l|}{Stromnetz AC}     & \multicolumn{3}{c|}{vorhanden}                \\ \hline
+        \multicolumn{1}{|l|}{Stromnetz DC}     & \multicolumn{3}{c|}{vorhanden}                \\ \hline
+        \multicolumn{1}{|l|}{H2 - Pipeline}    & \multicolumn{3}{c|}{vorhanden}                \\ \hline
+        \multicolumn{1}{|l|}{Endenergiebedarf} & \multicolumn{3}{c|}{Strom und H2} \\ \hline
+    \end{tabular}
+    \caption{Komponenten des Energiesystems für Gruppe 3}
+    \label{tab:systemdesign2}
+\end{table}
+\todo{Tabelle schöner gestalten. Ggf. auch nach Gewinnung, Speicherung, Verbrauch, Umwandlung, Transport aufteilen}
+\todo{Weitere Komponenten wie Erdgas, Biogas, Wasserkraft, usw. auflisten}
+
+Die Daten für das Energiesystemmodell in dem Betrachtungszeitraum \date{01.01.2050} bis \date{31.12.2050} stammen aus dem Beispiel ``Multi-regional Energy System Workflow'' des vom Institut IEK3 des Forschungszentrums Jülichs entwickelten Python-Framework FINE. \todo{Quelle}
+Mithilfe des Frameworks FINE wird im weiteren Verlauf dieser Arbeit die Modellierung des Jahres 2050 in stündlicher Auflösung und Optimierung hinsichtlich der Gesamtkosten unter Einhaltung der gegebenen Rahmenbedingungen durchgeführt.
+
+Das Modell bezieht sich ausschließlich auf die Region Deutschland. \todo{Bild Cluster Deutschland einbauen} Deutschland wird hierbei in acht Cluster unterteilt, welche sich durch unterschiedliche Kapazitätsgrenzen und ggf. Lastgänge für alle Komponenten zur Erzeugung, Umwandlung, Speicherung unterscheiden. Beispielsweise kann in Cluster vier, welches im Süden von Deutschland liegt, keine Offshore Windparks gebaut werden, da dieses Cluster keinen Zugang zum Meer hat. 
+
+Bei der Modellierung muss in jedem Cluster der Energiebedarf von Strom und Wasserstoff zu jedem Zeitpunkt gedeckt sein. Für die Übertragung von Strom und Wasserstoff zwischen verschiedenen Clustern müssen Übertragungsnetze bzw. Pipelines mit entsprechenden Kapazitäten vorhanden sein. 
+
+Nachfolgend wird auf die verwendeten Komponenten des Energiesystemmodells inklusive der technischen und ökonomischen Parameter eingegangen. 
+ 
+\subsection{Energieträger}
+- Strom
+- Erdgas
+- Methan
+- Wasserstoff
+- CO2 (inklusive Ausgangswert und Reduktionsziel)
+
+\subsection{Energiegewinnung}
+- Importe von Gas und Biogas
+- Stromgewinnung durch GuD und Biogasanlagen (beschrieben in Umwandlung)
+- Wasserkraft
+- EE 
+
+\subsection{Energieumwandlung}
+- GuD und Biogas
+- Elektrolyse 
+
+\subsection{Energiespeicherung}
+- Karvernenspeicher (in welchen Regionen)
+- Pumpspeicherkraftwerke
+- Batteriespeicher
+
+\subsection{Energieübertragung}
+- AC (bereits installiert)
+- DC (bereits installiert)
+- H2 Pipeline
+
 
 
 \newpage
