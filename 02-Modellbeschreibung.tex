@@ -26,29 +26,50 @@ Bei der Modellierung muss in jedem Cluster der Energiebedarf von Strom und Wasse
 Nachfolgend wird auf die verwendeten Komponenten des Energiesystemmodells inklusive der technischen und ökonomischen Parameter eingegangen. 
  
 \subsection{Energieträger}
-- Strom
-- Erdgas
-- Methan
-- Wasserstoff
-- CO2 (inklusive Ausgangswert und Reduktionsziel)
+In dem Energiesystem werden verschiedene Rohstoffe (Commodities) als Energieträger eingesetzt. 
+Während die Nachfrage nur aus Strom und Wasserstoff besteht, können zusätzlich Methan und Biogas als Energieträger verwendet werden.
+
+Zusätzlich wird in dem Modell CO2 als Commodity betrachtet und durch ein jährliches Limit beschränkt. Der Ausgangswert für die verschiedenen Reduktionsfälle wurde im Jahr 1990 ermittelt und liegt bei 366 Mio. Tonnen pro Jahr. 
 
 \subsection{Energiegewinnung}
-- Importe von Gas und Biogas
-- Stromgewinnung durch GuD und Biogasanlagen (beschrieben in Umwandlung)
-- Wasserkraft
-- EE 
+Zur Energiegewinnung können in dem Modell verschiedene Quellen genutzt werden.
+
+Zum einen können bereits existierende Laufwasserkraftwerken mit Gesamtleistung von 3,8 GW zu geringen Betriebskosten von 790 Mio. € genutzt werden. Aufgrund der festen Betriebsrate (durch die Flüsse vorgegeben) können diese in dem Beispieljahr maximal 17.397 GWh Strom erzeugen.
+
+Zum anderen können Methan und Biogas von außerhalb des modellierten Energiesystems zu festen Preisen von 33.100 € bzw. 54.090 € pro GW LWH importiert werden. Methan kann in unbegrenzter Menge importiert werden. \todo{Was hat es mit der OperationRateMax bei Biogas auf sich?} 
+Damit diese Energieträger zur Deckung der Strom- bzw. Wasserstoffnachfrage verwendet werden können, sind entsprechende Umwandlungsanlagen notwendig. Diese werden in dem nachfolgenden Abschnitt beschrieben.
+
+Eine weitere Möglichkeit zur Energiegewinnung von Strom sind erneuerbare Erzeugungsanlagen. In diesem Modell können Wind Onshore, Wind Offshore und Photovoltaikanlagen verwendet werden. Je Cluster wird die maximal installierbare Kapazität vorgegeben. 
+Anders als konventionelle Kraftwerke können erneuerbare Erzeugungsnalgen nicht selbstbestimmt produzieren, sondern sind auf äußere Einflüsse (vorherrschende Winde und Sonneneinstrahlung) angewiesen. Um dies in dem Modell abzubilden, wird je Cluster und Anlagentyp eine maximale Betriebsrate in \% für jeden Zeitschritt festgelegt. Zusätzlich werden je Anlage ökonomische Parameter zur Bestimmung der Gesamtkosten in Abhängigkeit der installierten Kapazität angegeben. Diese können Tabelle \todo{ref} entnommen werden.
+
+\todo{Tabelle mit invest, opex, interest rate, economic lifetime für die drei}
 
 \subsection{Energieumwandlung}
-- GuD und Biogas und Wasserstoffgasanalge 
-- Elektrolyse 
-- Brennstoffzellen
+Zur Energieumwandlung zwischen den Energieträgern werden Umwandlungsanlagen benötigt. So kann beispielsweise durch ein GuD-Kraftwerk Methan in Strom umgewandelt werden. In der Modellierung wird der Wirkungsgrad der Anlage sowie das dabei freigesetzte CO2 berücksichtigt. 
+
+Neben den verschiedenen Gasanlagen, welche Gas in Strom umwandeln, stellt die Elektrolyse eine Möglichkeit zur Umwandlung von Strom in Wasserstoff zur Verfügung. Durch Brennstoffzellen ist zusätzlich eine Möglichkeit gegeben, um aus Wasserstoff Strom zu gewinnen.
+
+Die technischen und ökonomischen Parametern aller Umwandlungsanlagen können Tabelle \todo{ref} entnommen werden.
+\todo{Tabelle mit von-nach, Wirkungsgrad, freigesetztes CO2, invest, opex, interest, lifetime}
 
 \subsection{Energiespeicherung}
-- Karvernenspeicher (in welchen Regionen)
-- Pumpspeicherkraftwerke
-- Batteriespeicher
+Zu jedem Zeitschritt muss die Nachfrage durch ein Angebot gedeckt sein. Um dies zu gewährleisten werden je nach gewählten Erzeugungsanlagen Speicher zwingend benötigt.
+In dem Beispielszenario können drei Speicherarten verwendet werden:
+\begin{itemize}
+    \item \textbf{Batteriespeicher} (kurzfristig)\\Aufgrund der schnellen Ein/Ausspeicherraten, die eine vollständige Entladung innerhalb einer Stunde ermöglichen, eignet sich der Batteriespeicher für den schnellen Leistungsausgleich. Durch die hohen Investitionskosten pro Kapazität und der vergleichsweise hohen Selbstentladung von 3 \% eignet sich der Speicher besonders für den kurzfristigen Einsatz.
+    \item \textbf{Pumpspeicher} (mittelfristig)\\Eine vollständige Endladung des Speichers braucht ca. 6 Stunden. Der Speicher ist in dem Szenario bereits installiert.
+    \item \textbf{Salzkarvernenspeicher} (langfristig)\\Karvernenspeicher können verhältnismäßig viel Energie in Form von Gas speichern. Eine vollständige Entladung braucht ca. 20 Tage. Zudem gibt es (in unserem Beispiel) keine Selbstentladung, weshalb der Speicher für die langfristige Speicherung bestens geeignet ist.   
+\end{itemize}    
+
+Analog zu der Energieerzeugung können die Speicher mit einer maximalen Kapazität je Cluster installiert werden. Die ökonomischen Parameter können der Tabelle \todo{ref} entnommen werden.
+
+\todo{Tabelle mit ökonomischen Parametern}
 
 \subsection{Energieübertragung}
+Um die Energie zwischen den verschiedenen Clustern zu Übertragen, sind Übertragungsnetze erforderlich. 
+\todo{Mehr schreiben}
+\todo{Tabelle... I guess?}
+
 - AC (bereits installiert)
 - DC (bereits installiert)
 - H2 Pipeline
