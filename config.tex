@@ -63,3 +63,14 @@
   \end{figure}
   \FloatBarrier
 } % Beispiel: \smallimage{Funny.PNG}{Dies ist eine Beschreibung}
+
+
+\newcommand{\tinyimage}[2]{
+  \begin{figure}[!htp]
+    \centering
+    \includegraphics[max height=19cm,max width=0.4\textwidth,keepaspectratio]{images/#1}
+    \caption{#2}
+    \label{image:#1}
+  \end{figure}
+  \FloatBarrier
+} % Beispiel: \tinyimage{Funny.PNG}{Dies ist eine Beschreibung}

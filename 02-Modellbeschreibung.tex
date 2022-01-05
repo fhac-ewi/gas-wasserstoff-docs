@@ -20,7 +20,9 @@ In diesem Kapitel wird das Energiesystemmodell für Deutschland bestehend aus St
 Die Daten für das Energiesystemmodell in dem Betrachtungszeitraum \textit{01. Januar 2050} bis \textit{31. Dezember 2050} stammen aus dem Beispiel ``Multi-regional Energy System Workflow'' des vom Institut IEK3 des Forschungszentrums Jülichs entwickelten Python-Framework FINE. \todo{Quelle}
 Mit Hilfe des Frameworks FINE wird im weiteren Verlauf dieser Arbeit die Modellierung des Jahres 2050 in stündlicher Auflösung und Optimierung hinsichtlich der Gesamtkosten unter Einhaltung der gegebenen Rahmenbedingungen durchgeführt.
 
-Das Modell bezieht sich ausschließlich auf die Region Deutschland. \todo{Bild Cluster Deutschland einbauen} Deutschland wird hierbei in acht Cluster unterteilt, welche sich durch unterschiedliche Kapazitätsgrenzen und ggf. Lastgänge für alle Komponenten zur Erzeugung, Umwandlung, Speicherung unterscheiden. Beispielsweise kann in Cluster vier, welches im Süden von Deutschland liegt, keine Offshore Windparks gebaut werden, da dieses Cluster keinen Zugang zum Meer hat. 
+\tinyimage{DEinCluster.png}{Deutschland in 8 Cluster aufgeteilt}
+
+Das Modell bezieht sich ausschließlich auf die Region Deutschland. Wie in Abbildung \ref{image:DEinCluster.png} erkennbar ist, wird Deutschland in acht Cluster unterteilt, welche sich durch unterschiedliche Kapazitätsgrenzen und ggf. Lastgänge für alle Komponenten zur Erzeugung, Umwandlung, Speicherung unterscheiden. Beispielsweise kann in Cluster vier, welches im Süden von Deutschland liegt, keine Offshore Windparks gebaut werden, da dieses Cluster keinen Zugang zum Meer hat. 
 
 Bei der Modellierung muss in jedem Cluster der Energiebedarf von Strom und Wasserstoff zu jedem Zeitpunkt gedeckt sein. Für die Übertragung von Strom und Wasserstoff zwischen verschiedenen Clustern müssen Übertragungsnetze bzw. Pipelines mit entsprechenden Kapazitäten vorhanden sein. 
 
@@ -41,7 +43,7 @@ Zum anderen können Methan und Biogas von außerhalb des modellierten Energiesys
 Damit diese Energieträger zur Deckung der Strom- bzw. Wasserstoffnachfrage verwendet werden können, sind entsprechende Umwandlungsanlagen notwendig. Diese werden in dem nachfolgenden Abschnitt beschrieben.
 
 Eine weitere Möglichkeit zur Energiegewinnung von Strom sind erneuerbare Erzeugungsanlagen. In diesem Modell können Wind Onshore, Wind Offshore und Photovoltaikanlagen verwendet werden. Je Cluster wird die maximal installierbare Kapazität vorgegeben. 
-Anders als konventionelle Kraftwerke können erneuerbare Erzeugungsnalgen nicht selbstbestimmt produzieren, sondern sind auf äußere Einflüsse (vorherrschende Winde bzw. Sonneneinstrahlung) angewiesen. Um dies in dem Modell abzubilden, wird je Cluster und Anlagentyp eine maximale Betriebsrate in \% für jeden Zeitschritt festgelegt. Zusätzlich werden je Anlage ökonomische Parameter zur Bestimmung der Gesamtkosten in Abhängigkeit der installierten Kapazität angegeben. Diese können Tabelle \todo{ref} entnommen werden.
+Anders als konventionelle Kraftwerke können erneuerbare Erzeugungsanlagen nicht selbstbestimmt produzieren, sondern sind auf äußere Einflüsse (vorherrschende Winde bzw. Sonneneinstrahlung) angewiesen. Um dies in dem Modell abzubilden, wird je Cluster und Anlagentyp eine maximale Betriebsrate in \% für jeden Zeitschritt festgelegt. Zusätzlich werden je Anlage ökonomische Parameter zur Bestimmung der Gesamtkosten in Abhängigkeit der installierten Kapazität angegeben. Diese können Tabelle \todo{ref} entnommen werden.
 
 \todo{Tabelle mit invest, opex, interest rate, economic lifetime für die drei}
 
@@ -67,70 +69,13 @@ Analog zu der Energieerzeugung können die Speicher mit einer maximalen Kapazit�
 \todo{Tabelle mit ökonomischen Parametern}
 
 \subsection{Energieübertragung}
-Um die Energie zwischen den verschiedenen Clustern zu Übertragen, sind Übertragungsnetze erforderlich. 
-\todo{Mehr schreiben}
+In dem vorliegenden Modell wird für die Stromübertragung auf die bestehenden Wechselstrom- (AC) und Gleichstromnetze (DC) zurückgegriffen.
+Das AC Netz verbindet einige benachbarte Cluster miteinander und ermöglicht eine verlustfreie Übertragung über kurze Strecken. Das DC Netz verbindet entfernte Cluster miteinander und kann dadurch Strom über weite Strecken übertragen. Dies ist jedoch nicht Verlustfrei möglich.
+
+Neben Strom können die Energieträger Methan und Wasserstoff mithilfe von zwei voneinander getrennten Pipeline-Netzen zwischen theoretisch allen benachbarten Clustern verlustfrei übertragen werden. Da diese Netze zum heutigen Zeitpunkt nicht existieren, können diese bei der Modellierung entsprechend der Bedürfnisse installiert werden. Dabei gilt es jedoch zu beachten, dass zwischen zwei Regionen maximal 15 GW und alle Übertragungsstrecken in Summe die 300 GW nicht zu übersteigen. Die ökonomischen Parameter können der Tabelle \todo{ref} entnommen werden.
+
 \todo{Tabelle... I guess?}
 
-- AC (bereits installiert)
-- DC (bereits installiert)
-- H2 Pipeline
+In der Modellierung wird die Übertragung von Methan zwischen den Regionen nicht berücksichtigt. Dies ist damit zu begründen, dass Methan in jedem Cluster importiert werden kann. Eine Berücksichtigung der Übertragung zwischen den Clustern kann deshalb bei der Modellierung vernachlässigt werden.
 
-
-
-\newpage
-\todo{Ab hier alt}
-Im praktischen Teil des Unterrichts im Fach Gas und Wasserstoffversorgungssysteme sollen zukünftige Energieverteilungsmodelle für Deutschland bei verschiedenen prozentualen CO2 Reduktionen im Vergleich zu 1990 mit damals emittierten 366 Mio. Tonnen simuliert werden. 
-
-Basis der Simulationen stellt das vom Institut IEK3 des Forschungszentrums Jülichs bereitgestellten Framework „FINE“, welches die Programmiersprache Python implementiert und Energieszenarien mit Erzeugern, Verbrauchern und Speichern entwickeln und grafisch ausgeben kann.
-
-Das verwendete Modell der Bundesrepublik wird dabei in acht Zonen als sogenannte Cluster von Null bis Sieben eingeteilt, welches in der Abbildung \ref{image:DEinCluster.png} zu sehen ist.
-\todo{Cluster mit unterschiedlichen Nachfrage.. und Ausbaupotentialieln}
-
-\image{DEinCluster.png}{Deutschland in 8 Cluster aufgeteilt}
-
-\todo{Hier: Einleiten in Aufgabenstellung. Nicht so stark auf FINE einngehen}
-FINE erzeugt nach Ablauf der Simulationen automatisch die Verteilung der Energiesysteme und Kopplung durch Pipelines und Stromtrassen inklusive einer visuellen Ausgabe der Ergebnisse.
-Damit ein Vergleich der unterschiedlichen Teilnehmergruppen visualisiert und verglichen werden kann, benutzt jede Teilnehmergruppe in Ihrer Projektsimulation andere Energieversorgungs- und Verteilungskonzepte für Deutschland. Jedes Mitglied wird eine geforderte CO2 Reduktion zugewiesen, welche in den nachfolgenden Kapiteln von diesen präsentiert und erläutert werden.% In nachfolgender Tabelle XX sind die Reduktionen für die verschiedenen Simulationen zu sehen.
-
-
-\begin{table}[ht!]
-    \begin{tabular}{|lcll|}
-        \hline
-        \multicolumn{1}{|l|}{Erneuerbare Energie Erzeugung} & \multicolumn{1}{l|}{Wind Onshore} & \multicolumn{1}{l|}{Wind Offshore} & Photovoltaik \\ \hline
-        \multicolumn{1}{|l|}{Stromnetz AC}     & \multicolumn{3}{c|}{vorhanden}                \\ \hline
-        \multicolumn{1}{|l|}{Stromnetz DC}     & \multicolumn{3}{c|}{vorhanden}                \\ \hline
-        \multicolumn{1}{|l|}{H2 - Pipeline}    & \multicolumn{3}{c|}{vorhanden}                \\ \hline
-        \multicolumn{1}{|l|}{Endenergiebedarf} & \multicolumn{3}{c|}{Strom und Wasserstoff H2} \\ \hline
-    \end{tabular}
-    \caption{Energiesystemdesign}
-    \label{tab:systemdesign}
-\end{table}
-
-
-Tabelle \ref{tab:systemdesign} zeigt das verwendete Konzept zur Simulationsausführung in FINE. Die Bereitstellung aus erneuerbaren Energien stellen hierbei Windkraft in On- und Offshore Konfiguration und Photovoltaik aus der direkten Sonnennutzung dar. Des weiteren existieren
-Stromtrassen in Gleich- und Wechselstromkonfiguration und Pipelines zum Transport des verwendeten Wasserstoffs zur Verfügung. Die Energieverbräuche der einzelnen Sektoren werden in Form von Strom und direkter H2 Nutzung simuliert. Bestehende Wasserkraft, Methan und Biogasanlagen werden in die Simulation mit einbezogen und der Einkauf von
-zusätzlichen Ressourcen in Form Gasförmigen Stoffen angenommen. Weil in der Realität der Ökonomische Gedanke stets eine Rolle spielt und keine Investitionen ohne die wirtschaftlichen Parameter durchgeführt werden zeigt nachfolgende Tabelle \todo{Verlinkung} die verwendeten und kalkulierten Kosten zur Installation und Inbetriebnahme der Energieressourcen in Deutschland. Das Framework „FINE“ bezieht diese Kenngrößen in die Simulation mit ein und berechnet die Gesamten volkswirtschaftlichen Investitionskosten, welche zukünftig zu treffen sind. 
-
-%\image{tabelle_sonst.png}{Tabelle}
-
-\begin{table}[ht!]
-    \centering
-    \begin{tabular}{|ccl|}
-    \hline
-    \multicolumn{1}{|c|}{\multirow{3}{*}{Wind Onshore}} & \multicolumn{1}{c|}{Investition}   & 1,1 Mrd. € / GW Leistung \\ \cline{2-3} 
-    \multicolumn{1}{|c|}{}                              & \multicolumn{1}{c|}{Operation}     & 22 Mio. € / GW Leistung  \\ \cline{2-3} 
-    \multicolumn{1}{|c|}{}                              & \multicolumn{1}{c|}{Lebenszyklus}  & 20 Jahre                 \\ \hline
-    \multicolumn{1}{|c|}{\multirow{3}{*}{Wind Offshore}} & \multicolumn{1}{c|}{Investition}  & 2,3 Mrd. € / GW Leistung \\ \cline{2-3} 
-    \multicolumn{1}{|c|}{}                              & \multicolumn{1}{c|}{Operation}     & 46 Mio. € / GW Leistung  \\ \cline{2-3} 
-    \multicolumn{1}{|c|}{}                              & \multicolumn{1}{c|}{Lebenszyklus}  & 20 Jahre                 \\ \hline
-    \multicolumn{1}{|c|}{\multirow{3}{*}{Photovoltaik}} & \multicolumn{1}{c|}{Investition}   & 650 Mio. € / GW Leistung \\ \cline{2-3} 
-    \multicolumn{1}{|c|}{}                              & \multicolumn{1}{c|}{Operation}     & 13 Mio. € / GW Leistung  \\ \cline{2-3} 
-    \multicolumn{1}{|c|}{}                              & \multicolumn{1}{c|}{Lebenszyklus}  & 25 Jahre                 \\ \hline
-    \multicolumn{1}{|c|}{Gas / Methan}                  & \multicolumn{1}{c|}{Kaufpreis}     & 33.100 € pro GW Leistung \\ \hline
-    \multicolumn{1}{|c|}{Biogas}                        & \multicolumn{1}{c|}{Kaufpreis}     & 54.090 € pro GW Leistung \\ \hline
-    \end{tabular}
-    \caption{Kostenparameter für Simulation}
-    \label{tab:my-table}
-\end{table}
-
-\todo{Tabellen als Abbildung?}
+\todo{Energienachfrage???}
