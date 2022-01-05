@@ -17,8 +17,8 @@ In diesem Kapitel wird das Energiesystemmodell für Deutschland bestehend aus St
 \todo{Tabelle schöner gestalten. Ggf. auch nach Gewinnung, Speicherung, Verbrauch, Umwandlung, Transport aufteilen}
 \todo{Weitere Komponenten wie Erdgas, Biogas, Wasserkraft, usw. auflisten}
 
-Die Daten für das Energiesystemmodell in dem Betrachtungszeitraum \date{01.01.2050} bis \date{31.12.2050} stammen aus dem Beispiel ``Multi-regional Energy System Workflow'' des vom Institut IEK3 des Forschungszentrums Jülichs entwickelten Python-Framework FINE. \todo{Quelle}
-Mithilfe des Frameworks FINE wird im weiteren Verlauf dieser Arbeit die Modellierung des Jahres 2050 in stündlicher Auflösung und Optimierung hinsichtlich der Gesamtkosten unter Einhaltung der gegebenen Rahmenbedingungen durchgeführt.
+Die Daten für das Energiesystemmodell in dem Betrachtungszeitraum \textit{01. Januar 2050} bis \textit{31. Dezember 2050} stammen aus dem Beispiel ``Multi-regional Energy System Workflow'' des vom Institut IEK3 des Forschungszentrums Jülichs entwickelten Python-Framework FINE. \todo{Quelle}
+Mit Hilfe des Frameworks FINE wird im weiteren Verlauf dieser Arbeit die Modellierung des Jahres 2050 in stündlicher Auflösung und Optimierung hinsichtlich der Gesamtkosten unter Einhaltung der gegebenen Rahmenbedingungen durchgeführt.
 
 Das Modell bezieht sich ausschließlich auf die Region Deutschland. \todo{Bild Cluster Deutschland einbauen} Deutschland wird hierbei in acht Cluster unterteilt, welche sich durch unterschiedliche Kapazitätsgrenzen und ggf. Lastgänge für alle Komponenten zur Erzeugung, Umwandlung, Speicherung unterscheiden. Beispielsweise kann in Cluster vier, welches im Süden von Deutschland liegt, keine Offshore Windparks gebaut werden, da dieses Cluster keinen Zugang zum Meer hat. 
 
@@ -41,7 +41,7 @@ Zum anderen können Methan und Biogas von außerhalb des modellierten Energiesys
 Damit diese Energieträger zur Deckung der Strom- bzw. Wasserstoffnachfrage verwendet werden können, sind entsprechende Umwandlungsanlagen notwendig. Diese werden in dem nachfolgenden Abschnitt beschrieben.
 
 Eine weitere Möglichkeit zur Energiegewinnung von Strom sind erneuerbare Erzeugungsanlagen. In diesem Modell können Wind Onshore, Wind Offshore und Photovoltaikanlagen verwendet werden. Je Cluster wird die maximal installierbare Kapazität vorgegeben. 
-Anders als konventionelle Kraftwerke können erneuerbare Erzeugungsnalgen nicht selbstbestimmt produzieren, sondern sind auf äußere Einflüsse (vorherrschende Winde und Sonneneinstrahlung) angewiesen. Um dies in dem Modell abzubilden, wird je Cluster und Anlagentyp eine maximale Betriebsrate in \% für jeden Zeitschritt festgelegt. Zusätzlich werden je Anlage ökonomische Parameter zur Bestimmung der Gesamtkosten in Abhängigkeit der installierten Kapazität angegeben. Diese können Tabelle \todo{ref} entnommen werden.
+Anders als konventionelle Kraftwerke können erneuerbare Erzeugungsnalgen nicht selbstbestimmt produzieren, sondern sind auf äußere Einflüsse (vorherrschende Winde bzw. Sonneneinstrahlung) angewiesen. Um dies in dem Modell abzubilden, wird je Cluster und Anlagentyp eine maximale Betriebsrate in \% für jeden Zeitschritt festgelegt. Zusätzlich werden je Anlage ökonomische Parameter zur Bestimmung der Gesamtkosten in Abhängigkeit der installierten Kapazität angegeben. Diese können Tabelle \todo{ref} entnommen werden.
 
 \todo{Tabelle mit invest, opex, interest rate, economic lifetime für die drei}
 
