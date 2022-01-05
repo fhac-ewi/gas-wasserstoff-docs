@@ -27,6 +27,7 @@ Das Modell bezieht sich ausschließlich auf die Region Deutschland. Wie in Abbil
 Bei der Modellierung muss in jedem Cluster der Energiebedarf von Strom und Wasserstoff zu jedem Zeitpunkt gedeckt sein. Für die Übertragung von Strom und Wasserstoff zwischen verschiedenen Clustern müssen Übertragungsnetze bzw. Pipelines mit entsprechenden Kapazitäten vorhanden sein. 
 
 Nachfolgend wird auf die verwendeten Komponenten des Energiesystemmodells inklusive der technischen und ökonomischen Parameter eingegangen. 
+Um die Kosten einer Anlage zu berechnen, werden die Betriebskosten und die Annuität aufsummiert. Die Annuität wird aus den Investitionskosten, der Lebensdauer und dem Zinssatz berechnet. Für alle Anlagen wird ein Zinssatz von 8 \% angenommen.
  
 \subsection{Energieträger}
 In dem Energiesystem werden verschiedene Rohstoffe (Commodities) als Energieträger eingesetzt. 
@@ -43,17 +44,44 @@ Zum anderen können Methan und Biogas von außerhalb des modellierten Energiesys
 Damit diese Energieträger zur Deckung der Strom- bzw. Wasserstoffnachfrage verwendet werden können, sind entsprechende Umwandlungsanlagen notwendig. Diese werden in dem nachfolgenden Abschnitt beschrieben.
 
 Eine weitere Möglichkeit zur Energiegewinnung von Strom sind erneuerbare Erzeugungsanlagen. In diesem Modell können Wind Onshore, Wind Offshore und Photovoltaikanlagen verwendet werden. Je Cluster wird die maximal installierbare Kapazität vorgegeben. 
-Anders als konventionelle Kraftwerke können erneuerbare Erzeugungsanlagen nicht selbstbestimmt produzieren, sondern sind auf äußere Einflüsse (vorherrschende Winde bzw. Sonneneinstrahlung) angewiesen. Um dies in dem Modell abzubilden, wird je Cluster und Anlagentyp eine maximale Betriebsrate in \% für jeden Zeitschritt festgelegt. Zusätzlich werden je Anlage ökonomische Parameter zur Bestimmung der Gesamtkosten in Abhängigkeit der installierten Kapazität angegeben. Diese können Tabelle \todo{ref} entnommen werden.
+Anders als konventionelle Kraftwerke können erneuerbare Erzeugungsanlagen nicht selbstbestimmt produzieren, sondern sind auf äußere Einflüsse (vorherrschende Winde bzw. Sonneneinstrahlung) angewiesen. Um dies in dem Modell abzubilden, wird je Cluster und Anlagentyp eine maximale Betriebsrate in \% für jeden Zeitschritt festgelegt. Zusätzlich werden je Anlage ökonomische Parameter zur Bestimmung der Gesamtkosten in Abhängigkeit der installierten Kapazität angegeben. Diese können Tabelle \ref{tab:param-energie} entnommen werden. Die Investitionskosten und Betriebskosten verstehen sich je 1 GW installierte Leistung.
 
-\todo{Tabelle mit invest, opex, interest rate, economic lifetime für die drei}
+\begin{table}[ht!]
+    \centering
+    \begin{tabular}{|l|c|c|c|}
+        \hline
+                                & \textbf{Investition} & \textbf{Betriebskosten} & \textbf{Abschreibungsdauer} \\ \hline
+        \textbf{Wind Onshore}  & 1,1 Mrd. €                                     & 22 Mio. €                                  & 20 Jahre                    \\ \hline
+        \textbf{Wind Offshore} & 2,3 Mrd. €                                     & 46 Mio. €                                  & 20 Jahre                    \\ \hline
+        \textbf{Photovoltaik}  & 0,65 Mrd. €                                    & 13 Mio. €                                  & 25 Jahre                    \\ \hline
+    \end{tabular}
+    \caption{Ökonomische Parameter für Energieerzeugungsanlagen}
+    \label{tab:param-energie}
+\end{table}
 
 \subsection{Energieumwandlung}
+\todo{Wirkungsgrade reinbringen}
+\todo{Freigesetztes CO2 reinbringen}
 Zur Energieumwandlung zwischen den Energieträgern werden Umwandlungsanlagen benötigt. So kann beispielsweise durch ein GuD-Kraftwerk Methan in Strom umgewandelt werden. In der Modellierung wird der Wirkungsgrad der Anlage sowie das dabei freigesetzte CO2 berücksichtigt. 
 
 Neben den verschiedenen Gasanlagen, welche Gas in Strom umwandeln, stellt die Elektrolyse eine Möglichkeit zur Umwandlung von Strom in Wasserstoff zur Verfügung. Durch Brennstoffzellen ist zusätzlich eine Möglichkeit gegeben, um aus Wasserstoff Strom zu gewinnen.
 
-Die technischen und ökonomischen Parametern aller Umwandlungsanlagen können Tabelle \todo{ref} entnommen werden.
-\todo{Tabelle mit von-nach, Wirkungsgrad, freigesetztes CO2, invest, opex, interest, lifetime}
+Die ökonomischen Parametern aller Umwandlungsanlagen können der Tabelle \ref{tab:param-umwandlung} entnommen werden.
+\begin{table}[ht!]
+    \centering
+    \begin{tabular}{|l|ccc|}
+        \hline
+                                  & \multicolumn{1}{c|}{\textbf{Investition}} & \multicolumn{1}{c|}{\textbf{Betriebskosten}} & \textbf{Abschreibungsdauer} \\ \hline
+        \textbf{GuD-Kraftwerk}    & \multicolumn{3}{c|}{}                                                                                                  \\ \hline
+        \textbf{\hspace{3mm} Methan}           & \multicolumn{1}{c|}{650 Mio. €}           & \multicolumn{1}{c|}{21 Mio. €}               & 33 Jahre                    \\ \hline
+        \textbf{\hspace{3mm} Biogas}           & \multicolumn{1}{c|}{700 Mio. €}           & \multicolumn{1}{c|}{21 Mio. €}               & 33 Jahre                    \\ \hline
+        \textbf{\hspace{3mm} Wasserstoff}      & \multicolumn{1}{c|}{700 Mio. €}           & \multicolumn{1}{c|}{21 Mio. €}               & 33 Jahre                    \\ \hline
+        \textbf{Elektrolyseur}    & \multicolumn{1}{c|}{500 Mio. €}           & \multicolumn{1}{c|}{12,5 Mio. €}             & 10 Jahre                    \\ \hline
+        \textbf{Brennstoffzellen} & \multicolumn{1}{c|}{1,5 Mrd. €}           & \multicolumn{1}{c|}{30 Mio. €}               & 10 Jahre                    \\ \hline
+        \end{tabular}
+    \caption{Ökonomische Parameter für Energieumwandlungsanlagen}
+    \label{tab:param-umwandlung}
+\end{table}
 
 \subsection{Energiespeicherung}
 Zu jedem Zeitschritt muss die Nachfrage durch ein Angebot gedeckt sein. Um dies zu gewährleisten werden je nach gewählten Erzeugungsanlagen Speicher zwingend benötigt.
@@ -64,17 +92,29 @@ In dem Beispielszenario können drei Speicherarten verwendet werden:
     \item \textbf{Salzkarvernenspeicher} (langfristig)\\Karvernenspeicher können verhältnismäßig viel Energie in Form von Gas speichern. Eine vollständige Entladung braucht ca. 20 Tage. Zudem gibt es (in unserem Beispiel) keine Selbstentladung, weshalb der Speicher für die langfristige Speicherung bestens geeignet ist.   
 \end{itemize}    
 
-Analog zu der Energieerzeugung können die Speicher mit einer maximalen Kapazität je Cluster installiert werden. Die ökonomischen Parameter können der Tabelle \todo{ref} entnommen werden.
+Analog zu der Energieerzeugung können die Speicher mit einer maximalen Kapazität je Cluster installiert werden. Die ökonomischen Parameter können der Tabelle \ref{tab:param-speicherung} entnommen werden.
 
-\todo{Tabelle mit ökonomischen Parametern}
+\begin{table}[ht!]
+    \centering
+    \begin{tabular}{|l|ccc|}
+    \hline
+                              & \multicolumn{1}{c|}{\textbf{Investition}} & \multicolumn{1}{c|}{\textbf{Betriebskosten}} & \textbf{Abschreibungsdauer} \\ \hline
+    \textbf{Salzkarvernen}    & \multicolumn{3}{c|}{}                                                                                                  \\ \hline
+    \textbf{\hspace{3mm} Biogas}           & \multicolumn{1}{c|}{40 T €}               & \multicolumn{1}{c|}{10 T €}                  & 30 Jahre                    \\ \hline
+    \textbf{\hspace{3mm} Wasserstoff}      & \multicolumn{1}{c|}{110 T €}              & \multicolumn{1}{c|}{570 T €}                 & 30 Jahre                    \\ \hline
+    \textbf{Pumpspeicher}     & \multicolumn{1}{c|}{0 €}                  & \multicolumn{1}{c|}{153 T €}                 & -                           \\ \hline
+    \textbf{Batteriespeicher} & \multicolumn{1}{c|}{151 Mio. €}           & \multicolumn{1}{c|}{2 Mio. €}                & 22 Jahre                    \\ \hline
+    \end{tabular}
+    \caption{Ökonomische Parameter für Energiespeicherungsanlagen}
+    \label{tab:param-speicherung}
+\end{table}
 
 \subsection{Energieübertragung}
 In dem vorliegenden Modell wird für die Stromübertragung auf die bestehenden Wechselstrom- (AC) und Gleichstromnetze (DC) zurückgegriffen.
 Das AC Netz verbindet einige benachbarte Cluster miteinander und ermöglicht eine verlustfreie Übertragung über kurze Strecken. Das DC Netz verbindet entfernte Cluster miteinander und kann dadurch Strom über weite Strecken übertragen. Dies ist jedoch nicht Verlustfrei möglich.
 
-Neben Strom können die Energieträger Methan und Wasserstoff mithilfe von zwei voneinander getrennten Pipeline-Netzen zwischen theoretisch allen benachbarten Clustern verlustfrei übertragen werden. Da diese Netze zum heutigen Zeitpunkt nicht existieren, können diese bei der Modellierung entsprechend der Bedürfnisse installiert werden. Dabei gilt es jedoch zu beachten, dass zwischen zwei Regionen maximal 15 GW und alle Übertragungsstrecken in Summe die 300 GW nicht zu übersteigen. Die ökonomischen Parameter können der Tabelle \todo{ref} entnommen werden.
-
-\todo{Tabelle... I guess?}
+Neben Strom können die Energieträger Methan und Wasserstoff mithilfe von zwei voneinander getrennten Pipeline-Netzen zwischen theoretisch allen benachbarten Clustern verlustfrei übertragen werden. Da diese Netze zum heutigen Zeitpunkt nicht existieren, können diese bei der Modellierung entsprechend der Bedürfnisse installiert werden. Dabei gilt es jedoch zu beachten, dass zwischen zwei Regionen maximal 15 GW und alle Übertragungsstrecken in Summe die 300 GW nicht zu übersteigen. 
+\todo{Investitionskosten und deren Berechnung textuell für die beiden Pipelines beschreiben. Es gibt keine opex}
 
 In der Modellierung wird die Übertragung von Methan zwischen den Regionen nicht berücksichtigt. Dies ist damit zu begründen, dass Methan in jedem Cluster importiert werden kann. Eine Berücksichtigung der Übertragung zwischen den Clustern kann deshalb bei der Modellierung vernachlässigt werden.
 
