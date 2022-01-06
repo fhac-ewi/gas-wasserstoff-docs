@@ -4,7 +4,7 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[ngerman]{babel} % Sprache deutsch
-\usepackage{geometry} % Layout Geometrie
+\usepackage[left=2.50cm, right=2.50cm, top=3.50cm, bottom=2.50cm]{geometry} % Layout Geometrie
 \usepackage[export]{adjustbox} % loads also graphicx
 \usepackage[section]{placeins} % Floating
 \usepackage{titleps} % Layout
@@ -34,7 +34,7 @@
   backend   = biber,
   style     = numeric,
   sorting   = none,
-  backref   = true
+ % backref   = true
 ]{biblatex}
 \addbibresource{quellen.bib}
 \DefineBibliographyStrings{german}{
@@ -52,7 +52,7 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpagestyle{ruled}
-{\sethead{\modulname}{- \thepage\space -}{Projektdokumentation}\headrule}
+{\sethead{\modulname}{- \thepage\space -}{Projektdokumentation - Gruppe 3}\headrule}
 \pagestyle{ruled}
 
 

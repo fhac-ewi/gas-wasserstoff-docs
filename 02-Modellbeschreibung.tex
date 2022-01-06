@@ -3,9 +3,10 @@
 In diesem Kapitel wird das Energiesystemmodell für Deutschland bestehend aus Strom- und Gasinfrastrukturen eingeführt, welches im Rahmen dieser Projektarbeit hinsichtlich der Kosten unter Berücksichtigung verschiedener CO2-Reduktionsziele für das Jahr 2050 optimiert wird. In Tabelle \ref{tab:systemdesign2} sind die verwendeten Komponenten für das Energiesystemmodell ersichtlich.
 
 \begin{table}[ht!]
+    \centering
     \begin{tabular}{|lcll|}
         \hline
-        \multicolumn{1}{|l|}{Erneuerbare Energie Erzeugung} & \multicolumn{1}{l|}{Wind Onshore} & \multicolumn{1}{l|}{Wind Offshore} & Photovoltaik \\ \hline
+        \multicolumn{1}{|l|}{Erzeugung (EE)} & \multicolumn{1}{l|}{Wind Onshore} & \multicolumn{1}{l|}{Wind Offshore} & Photovoltaik \\ \hline
         \multicolumn{1}{|l|}{Stromnetz AC}     & \multicolumn{3}{c|}{vorhanden}                \\ \hline
         \multicolumn{1}{|l|}{Stromnetz DC}     & \multicolumn{3}{c|}{vorhanden}                \\ \hline
         \multicolumn{1}{|l|}{H2 - Pipeline}    & \multicolumn{3}{c|}{vorhanden}                \\ \hline
@@ -40,6 +41,9 @@ Zur Energiegewinnung können in dem Modell verschiedene Quellen genutzt werden.
 
 Zum einen können bereits existierende Laufwasserkraftwerken mit Gesamtleistung von 3,8 GW zu geringen Betriebskosten von 790 Mio. € genutzt werden. Aufgrund der festen Betriebsrate (durch die Flüsse vorgegeben) können diese in dem Beispieljahr maximal 17.397 GWh Strom erzeugen.
 
+\todo{Import = Import ins Energiesystem}
+\todo{Methan bzw. Biogas unbegrenzt in allen Clustern verfügbar}
+\todo{Biogas kann in jedem Zeitschritt nur mit einem Limit importiert werden - Festgelegt durch die in der Region installierten Erzeugungsleistungen}
 Zum anderen können Methan und Biogas von außerhalb des modellierten Energiesystems zu festen Preisen von 33.100 € bzw. 54.090 € pro GW LWH importiert werden. Methan kann in unbegrenzter Menge importiert werden. \todo{Was hat es mit der OperationRateMax bei Biogas auf sich?} 
 Damit diese Energieträger zur Deckung der Strom- bzw. Wasserstoffnachfrage verwendet werden können, sind entsprechende Umwandlungsanlagen notwendig. Diese werden in dem nachfolgenden Abschnitt beschrieben.
 
@@ -60,8 +64,8 @@ Anders als konventionelle Kraftwerke können erneuerbare Erzeugungsanlagen nicht
 \end{table}
 
 \subsection{Energieumwandlung}
-\todo{Wirkungsgrade reinbringen}
-\todo{Freigesetztes CO2 reinbringen}
+\todo{Wirkungsgrade ausrechnen und reinbringen}
+\todo{Freigesetztes CO2 reinbringen - nur bei Methan GuD}
 Zur Energieumwandlung zwischen den Energieträgern werden Umwandlungsanlagen benötigt. So kann beispielsweise durch ein GuD-Kraftwerk Methan in Strom umgewandelt werden. In der Modellierung wird der Wirkungsgrad der Anlage sowie das dabei freigesetzte CO2 berücksichtigt. 
 
 Neben den verschiedenen Gasanlagen, welche Gas in Strom umwandeln, stellt die Elektrolyse eine Möglichkeit zur Umwandlung von Strom in Wasserstoff zur Verfügung. Durch Brennstoffzellen ist zusätzlich eine Möglichkeit gegeben, um aus Wasserstoff Strom zu gewinnen.
@@ -111,9 +115,9 @@ Analog zu der Energieerzeugung können die Speicher mit einer maximalen Kapazit�
 
 \subsection{Energieübertragung}
 In dem vorliegenden Modell wird für die Stromübertragung auf die bestehenden Wechselstrom- (AC) und Gleichstromnetze (DC) zurückgegriffen.
-Das AC Netz verbindet einige benachbarte Cluster miteinander und ermöglicht eine verlustfreie Übertragung über kurze Strecken. Das DC Netz verbindet entfernte Cluster miteinander und kann dadurch Strom über weite Strecken übertragen. Dies ist jedoch nicht Verlustfrei möglich.
+Das AC Netz verbindet einige benachbarte Cluster miteinander und ermöglicht eine verlustfreie Übertragung über kurze Strecken. Das DC Netz verbindet entfernte Cluster miteinander und kann dadurch Strom über weite Strecken übertragen. Dies ist jedoch nicht verlustfrei möglich.
 
-Neben Strom können die Energieträger Methan und Wasserstoff mithilfe von zwei voneinander getrennten Pipeline-Netzen zwischen theoretisch allen benachbarten Clustern verlustfrei übertragen werden. Da diese Netze zum heutigen Zeitpunkt nicht existieren, können diese bei der Modellierung entsprechend der Bedürfnisse installiert werden. Dabei gilt es jedoch zu beachten, dass zwischen zwei Regionen maximal 15 GW und alle Übertragungsstrecken in Summe die 300 GW nicht zu übersteigen. 
+Neben Strom können die Energieträger Methan und Wasserstoff mithilfe von zwei voneinander getrennten Pipeline-Netzen zwischen theoretisch allen benachbarten Clustern verlustfrei übertragen werden. Da diese Netze zum heutigen Zeitpunkt nicht existieren, können diese bei der Modellierung entsprechend der Bedürfnisse installiert werden. Dabei gilt es jedoch zu beachten, dass zwischen zwei Regionen Pipelines bis zu einer maximalen Kapazität von 15 GW verwendet werden dürfen und alle Übertragungsstrecken in Summe die 300 GW nicht zu übersteigen dürfen. 
 \todo{Investitionskosten und deren Berechnung textuell für die beiden Pipelines beschreiben. Es gibt keine opex}
 
 In der Modellierung wird die Übertragung von Methan zwischen den Regionen nicht berücksichtigt. Dies ist damit zu begründen, dass Methan in jedem Cluster importiert werden kann. Eine Berücksichtigung der Übertragung zwischen den Clustern kann deshalb bei der Modellierung vernachlässigt werden.
