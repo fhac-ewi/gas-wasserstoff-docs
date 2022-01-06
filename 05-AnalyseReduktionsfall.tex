@@ -12,6 +12,82 @@ Nachdem in Kapitel \ref{sec:gesamtanalyse} die Simulationen mit unterschiedliche
 \todo{Abbildung aller Reduktionsfälle + Bearbeiter}
 \todo{CO2 mit tief gestellter 2 schreiben}
 
+
+\begin{table}[!h]
+    \footnotesize	
+    \begin{tabular}{|l|llllll|}
+    \hline
+     &
+      \multicolumn{6}{c|}{\textbf{CO\textsubscript{2} Reduktion}} \\ \cline{2-7} 
+     &
+      \multicolumn{1}{l|}{-75 \%} &
+      \multicolumn{1}{l|}{-80 \%} &
+      \multicolumn{1}{l|}{-85 \%} &
+      \multicolumn{1}{l|}{-90 \%} &
+      \multicolumn{1}{l|}{-95 \%} &
+      -100\% \\ \hline
+    {TAC {[}1 Mrd. €/a{]} (Gesamtsystemkosten)} &
+      \multicolumn{1}{l|}{41,1} &
+      \multicolumn{1}{l|}{41,9} &
+      \multicolumn{1}{l|}{43,3} &
+      \multicolumn{1}{l|}{45,4} &
+      \multicolumn{1}{l|}{48,0} &
+      52,6 \\ \hline
+    {Installierte Leistung Elektrolyse {[}GW{]}} &
+      \multicolumn{1}{l|}{11,3} &
+      \multicolumn{1}{l|}{11,3} &
+      \multicolumn{1}{l|}{11,3} &
+      \multicolumn{1}{l|}{18,2} &
+      \multicolumn{1}{l|}{22,7} &
+      23,3 \\ \hline
+    {Installierte Leistung Wind-Onshore {[}GW{]}} &
+      \multicolumn{1}{l|}{36,3} &
+      \multicolumn{1}{l|}{22,7} &
+      \multicolumn{1}{l|}{24,5} &
+      \multicolumn{1}{l|}{29,8} &
+      \multicolumn{1}{l|}{30,6} &
+      44,2 \\ \hline
+    {Installierte Leistung Wind-Offshore {[}GW{]}} &
+      \multicolumn{1}{l|}{48,4} &
+      \multicolumn{1}{l|}{69} &
+      \multicolumn{1}{l|}{75,7} &
+      \multicolumn{1}{l|}{81} &
+      \multicolumn{1}{l|}{81} &
+      81 \\ \hline
+    {Installierte Leistung PV {[}GW{]}} &
+      \multicolumn{1}{l|}{29,7} &
+      \multicolumn{1}{l|}{28,4} &
+      \multicolumn{1}{l|}{42,2} &
+      \multicolumn{1}{l|}{60,2} &
+      \multicolumn{1}{l|}{121} &
+      188,2 \\ \hline
+    {Speicherkapazität Batterie {[}GW{]}} &
+      \multicolumn{1}{l|}{\textless{}0,1} &
+      \multicolumn{1}{l|}{1,1} &
+      \multicolumn{1}{l|}{4,2} &
+      \multicolumn{1}{l|}{0} &
+      \multicolumn{1}{l|}{4,4} &
+      129,5 \\ \hline
+    {H\textsubscript{2} Salzkavernen Speicherkapazität {[}GWh{]}} &
+      \multicolumn{1}{l|}{0} &
+      \multicolumn{1}{l|}{0} &
+      \multicolumn{1}{l|}{0} &
+      \multicolumn{1}{l|}{2241,5} &
+      \multicolumn{1}{l|}{3725,5} &
+      3936,7 \\ \hline
+    {Installierte H\textsubscript{2} Pipelinekapazität {[}GW{]}} &
+      \multicolumn{1}{l|}{29} &
+      \multicolumn{1}{l|}{29} &
+      \multicolumn{1}{l|}{28,4} &
+      \multicolumn{1}{l|}{31} &
+      \multicolumn{1}{l|}{31,4} &
+      19,1 \\ \hline
+    \end{tabular}
+    \caption{Ergebnisse der Optimierung je Reduktionsfall
+    }
+    \label{tab:my-table}
+    \end{table}
+
 \subsection{75 \%}
 Bei einem C02 Reduktionsziel von 75 \% belaufen sich die Gesamtkosten für das Energiemodell auf ca. 41 Mrd. €. Der Reduktionsfall zeichnet sich durch hohe Erdgasimporte aus. Aufgrund der geringeren CO2-Restriktion behält die Stromerzeugung von Erdgaskraftwerken noch eine signifikante Rolle. Die Zwischenspeicherung in Batteriespeichern ist in diesem Modell marginal. Der Rechenlauf berücksichtigt für das Energiemodell keine Kosten für den Einkauf von Biogas und somit entfällt auch der Bedarf an Biogasanlagen um innerhalb der Restriktion zu bleiben. 
 
@@ -105,17 +181,55 @@ Zur Erreichung des Reduktionsziels von 90 \% wurde ein Energiesystem mit Gesamtk
 \smallimage{Energiemix95.png}{Reduktionsfall 95 \% - Gesamtenergieverteilung bei 95 \% Reduktion im Jahr 2050}
 
 In oben zu sehender Abbildung \ref{image:Energiemix95.png} ist die grafische Auswertung der CO2 Reduktion bei 95 \% in den jeweiligen Anteilen an der Gesamtenergieverteilung zu sehen. Im Vergleich zum vorherigen Unterkapitel von 90 \% wird die Erhöhung der CO2 Reduktion nun durch gesteigerte Anteile an Offshore Windkraft und Photovoltaik erreicht. Die Anteile an Solarzellen werden dabei von 9 \% auf 19 \% um weitere 10 \% erhöht, während die Anteile der Offshore Windkraft lediglich um weitere 2 \% von 48 \% auf 50 \% gesteigert werden. Die jeweiligen Anteile an importiertem Biogas, der Laufwasserkraftwerke, der Onshore Windkraft und den importierten Natural Gasen bleiben im Vergleich zu 90 \% unverändert. 
-Die Nachfolgende Abbildung \ref{image:KapazitätWind-95.png} veranschaulicht die grafische Verteilung der Offshore Windkraft an elektrisch installierter Leistung in GW. Der größte Anteil wir dabei mit etwa 50 GW an der Nordseeküste von Niedersachsen von Fine installiert, währenddessen sich um Schleswig-Holstein Nord- und Ostseeküsten in etwa der mittlere Anteil von etwa 20 GW befindet. Die niedrigen Anteile an Offshore Windkraft stellen hierbei die Ostseeküste um Brandenburg und ein großer Anteil der verbliebenen Küstengebiete von Schleswig-Holstein und Niedersachsen mit etwa bis zu 5 GW installierter elektrischer Leistung zur Verfügung. Insgesamt ermittelte Fine die Anteile von 50 \% Offshore Windkraft mit einer elektrischen installierten Leistung von etwa 81 GW. Die Kosten der Installation werden mit 22,7 Milliarden € kalkuliert. Bezogen auf Gesamtinstallationskosten von 47,96 Milliarden € entspricht dies einen Kostenanteil von 47,33  \%. Der Leistungsbeiwert bzw. Wirkungsgrad von Windkraftanlagen kann dabei über 50 \% erreichen. \todo{Fußzeile - Quelle:Energiezukunft.EU. (15. 05 2021). Von https://www.energiezukunft.eu/erneuerbare-energien/biomasse/wirkungsgrade-flaechenverbrauch-und-emissionen/ abgerufen} 
+Die Nachfolgende Abbildung \ref{image:KapazitätWind-95.png} veranschaulicht die grafische Verteilung der Offshore Windkraft an elektrisch installierter Leistung in GW. 
+Der größte Anteil wir dabei mit etwa 50 GW an der Nordseeküste von Niedersachsen von Fine installiert, währenddessen sich um Schleswig-Holstein Nord- und Ostseeküsten in etwa der mittlere Anteil von etwa 20 GW befindet. 
+Die niedrigen Anteile an Offshore Windkraft stellen hierbei die Ostseeküste um Brandenburg und ein großer Anteil der verbliebenen Küstengebiete von Schleswig-Holstein und Niedersachsen mit etwa bis zu 5 GW installierter elektrischer Leistung zur Verfügung. 
+Insgesamt ermittelte Fine die Anteile von 50 \% Offshore Windkraft mit einer elektrischen installierten Leistung von etwa 81 GW. Die Kosten der Installation werden mit 22,7 Milliarden € kalkuliert. Bezogen auf Gesamtinstallationskosten von 47,96 Milliarden € entspricht dies einen Kostenanteil von 47,33  \%. 
+Der Leistungsbeiwert bzw. Wirkungsgrad von Windkraftanlagen kann dabei über 50 \% erreichen. \footnote{Quelle: Energiezukunft.EU. (15. 05 2021). Von https://www.energiezukunft.eu/erneuerbare-energien/biomasse/wirkungsgrade-flaechenverbrauch-und-emissionen/ abgerufen} \todo{Quellenverzeichnis}
 
 \smallimage{KapazitätWind-95.png}{Reduktionsfall 95 \%}
 
-Der zweite große Anteil der Photovoltaik an der erneuerbaren Energieversorgung wird mit einer gesamt installierten Leistung von 120 GW von FINE kalkuliert. Monokristalline Solarzellen erreichen heute einen Wirkungsgrad von etwa 22 \% \todo{Fußzeile - Quelle:Energiezukunft.EU. (15. 05 2021). Von https://www.energiezukunft.eu/erneuerbare-energien/biomasse/wirkungsgrade-flaechenverbrauch-und-emissionen/ abgerufen}  und können flächendeckend auf allen Hausdächern, Bushaltestellen, Fabriken und neuen Versuchen mit solar betriebenen Geh- und Fahrradwegen installiert werden. Aktuell sind in Deutschland etwa 53,58 GW elektrische Leistung installiert \todo{Fußzeile - Quelle:Energiezukunft.EU. (15. 05 2021). Von https://www.energiezukunft.eu/erneuerbare-energien/biomasse/wirkungsgrade-flaechenverbrauch-und-emissionen/ abgerufen} . Das erneuerbare Energien Gesetz sieht allein bis 2030 eine Steigerung auf bis zu 100 GW vor.\todo{Fußzeile - Quelle:Energiezukunft.EU. (15. 05 2021). Von https://www.energiezukunft.eu/erneuerbare-energien/biomasse/wirkungsgrade-flaechenverbrauch-und-emissionen/ abgerufen}  Die in unserer Fine Simulation ermittelte Photovoltaik Leistung von ungefähr 121 GW bis zum Jahr 2050 kann dabei durchaus als realistisch betrachtet werden. Nachfolgende Abbildung \ref{image:KapazitätPV-95.png} zeigt die Verteilung der zukünftigen Solaranlagen in Deutschland. Den niedrigsten Solaren Anteil platziert FINE nun in den Süd Westlichen Regionen um Baden-Württemberg, dem Saarland und Teilen von Hessens mit etwa insgesamt 5 GW installierter Leistung. Die Weitaus größten Teile werden von der Simulation im Bereich von Mitteldeutschland um Nordrhein-Westfalen, Niedersachsen, Hessen, Thüringen und den Teilen der Bundesländer um Sachsens mit Gebieten um die 20 GW im Osten bis zur maximal 35 GW im Westen implementiert. Bayern im Süden und Schleswig-Holstein im Norden erhalten in etwa jeweils 10 GW bis 15 GW an solaren Anteilen. Bezogen auf den wesentlich geringeren Wirkungsgrad der Solarzellen im Vergleich zu Windkrafträdern lassen sich somit auch die deutlich höheren installierten Leistungen von 121 GW PV zu den 81 GW Offshore Windkraft erklären. Die Kosten der PV Installation belaufen sich dabei auf ca. 8,9 Milliarden €, welche einem prozentualen Anteil von ca. 18,5  \% an den Gesamtkosten entsprechen.
+Der zweite große Anteil der Photovoltaik an der erneuerbaren Energieversorgung wird mit einer gesamt installierten Leistung von 120 GW von FINE kalkuliert. Monokristalline Solarzellen erreichen heute einen Wirkungsgrad von etwa 22 \% \footnote{Quelle:Energiezukunft.EU. (15. 05 2021). Von https://www.energiezukunft.eu/erneuerbare-energien/biomasse/wirkungsgrade-flaechenverbrauch-und-emissionen/ abgerufen} \todo{Quellenverzeichnis} und können flächendeckend auf allen Hausdächern, Bushaltestellen, Fabriken und neuen Versuchen mit solar betriebenen Geh- und Fahrradwegen installiert werden. 
+Aktuell sind in Deutschland etwa 53,58 GW elektrische Leistung installiert \footnote{Quelle:Energiezukunft.EU. (15. 05 2021). Von https://www.energiezukunft.eu/erneuerbare-energien/biomasse/wirkungsgrade-flaechenverbrauch-und-emissionen/ abgerufen} \todo{Quelle}. Das erneuerbare Energien Gesetz sieht allein bis 2030 eine Steigerung auf bis zu 100 GW vor.\footnote{Quelle:Energiezukunft.EU. (15. 05 2021). Von https://www.energiezukunft.eu/erneuerbare-energien/biomasse/wirkungsgrade-flaechenverbrauch-und-emissionen/ abgerufen} \todo{Quelle} Die in unserer Fine Simulation ermittelte Photovoltaik Leistung von ungefähr 121 GW bis zum Jahr 2050 kann dabei durchaus als realistisch betrachtet werden. Nachfolgende Abbildung \ref{image:KapazitätPV-95.png} zeigt die Verteilung der zukünftigen Solaranlagen in Deutschland. 
+Den niedrigsten Solaren Anteil platziert FINE nun in den Süd Westlichen Regionen um Baden-Württemberg, dem Saarland und Teilen von Hessens mit etwa insgesamt 5 GW installierter Leistung. Die Weitaus größten Teile werden von der Simulation im Bereich von Mitteldeutschland um Nordrhein-Westfalen, Niedersachsen, Hessen, Thüringen und den Teilen der Bundesländer um Sachsens mit Gebieten um die 20 GW im Osten bis zur maximal 35 GW im Westen implementiert. 
+Bayern im Süden und Schleswig-Holstein im Norden erhalten in etwa jeweils 10 GW bis 15 GW an solaren Anteilen. Bezogen auf den wesentlich geringeren Wirkungsgrad der Solarzellen im Vergleich zu Windkrafträdern lassen sich somit auch die deutlich höheren installierten Leistungen von 121 GW PV zu den 81 GW Offshore Windkraft erklären. Die Kosten der PV Installation belaufen sich dabei auf ca. 8,9 Milliarden €, welche einem prozentualen Anteil von ca. 18,5  \% an den Gesamtkosten entsprechen.
 
 \smallimage{KapazitätPV-95.png}{Reduktionsfall 95 \%}
 
 \smallimage{Speicher-95.png}{Reduktionsfall 95 \% - Energiespeicherkapazitäten der Simulation bei 90 \% und 95 \% CO2 Reduktion}
 
 Abbildung \ref{image:Speicher-95.png} veranschaulicht nun die Simulierten Energiespeicher bei 90 \% und 95 \% CO2 Reduktionen. Waren bei 90 \% noch keine Batteriespeicher vorgesehen ermittelt Fine nun bei 95 \% bereits notwendige Batteriespeicher mit einem Speichervolumen von 4,42 GWh. Die Wasserstoff Salzkavernen verdoppeln sich nahezu in ihren Speichervermögen von 1664,55 GWh auf 3735,46 GWh, währenddessen der Anteil an Kavernen mit Biogas nahezu unverändert bleibt und nur einen minimalen Zuwachs erfahren. Der Anteil an Pumpspeichern ist zur vorherigen Simulation unverändert geblieben. 
+
+\begin{figure}[!h]
+  \begin{minipage}[b]{.4\linewidth} 
+     \includegraphics{images/H2Pipeline-95.png}
+  \end{minipage}
+  \hspace{.1\linewidth}
+  \begin{minipage}[b]{.4\linewidth} 
+     \includegraphics{images/BiogasPipeline-95.png}
+  \end{minipage}
+  \caption{Verläufe der Wasserstoffpipelines (links) und Biogaspipelines (rechts) der Simulation bei 95 \% CO2 Reduktion}
+  \label{image:Pipelines-95}
+\end{figure}
+
+Die Grafiken in der Abbildung \ref{image:Pipelines-95} veranschaulichen die simulierten Verläufe der Wasserstoff- und Biogaspipelines. Die Wasserstoffversorgung verläuft dabei von Nord- nach Südrichtung mit großen Verbrauchern im Bereich Niedersachsens und Nordrhein-Westfalens um das Ruhrgebiet. Die Wasserstoffversorgung beginnt dabei mit ca. 8,75 GW Leistung und nimmt kontinuierlich bis zu den Endverbrauchern in Süddeutschland mit ca. 2,91 GW finaler Leistung ab. Die Versorgung mit Biogas zeigt nach Erstellung der Simulation einen getrennten Verlauf. Hierbei erstellt FINE eine kleine Versorgungstrasse mit ca. 0,43 GW installierter Leistung zwischen Schleswig-Holstein und Niedersachsen und legt die große Energieversorgung beginnend in Nordrhein-Westfalen mit 1,29 GW über Baden-Württemberg mit 0,86 GW und Bayern als Endverbraucher fest. Ein kleiner Versorgungsstrang für das Saarland und Rheinland-Pfalz wird ebenfalls simuliert.
+
+Zum kompletten Verständnis der 95 \% Reduktion wird im Folgenden noch die zukünftige Stromversorgung in Deutschland analysiert, welche in nachfolgender Abbildung \ref{image:Leitungen-95} von FINE simuliert und visualisiert worden ist.
+
+Das Wechselstromnetz wird dabei über alle Regionen in Nord- und Südrichtung verteilt, mit Spitzenleistungen von 18 GW elektrischer Leistung in den Haupttrassen und Verzweigungen zwischen den Knoten mit kleineren Leistungen im Bereich von ca. 12,0 GW bis 6,0 GW. Das Netz weißt dabei bereits große Ähnlichkeit mit dem heutigen Stromnetz im Jahre 2022 auf. Neu hinzugekommen sind in der Simulation die Trassen der Hochspannungsgleichstromübertragung in kurz HGÜ. Diese Technik ist relativ neu und beinhaltet insbesondere bei großen und weiten Übertragungen weniger Übertragungsverluste als Wechselstromübertragungen gleicher Größe. Hierzu können erzeugte Gleichströme von Brennstoffzellen und PV direkt in das Gleichstromnetz eingespeist und transportiert werden, wodurch eine zusätzliche Transformation in das Wechselstromnetz entfällt. Implementiert wurden diese Trassen von Fine in Nord- Süd Richtung zwischen Schleswig-Holstein und Baden-Württemberg mit einer maximalen Leistung von 4,0 GW, einer mittleren Leistung im Bereich Sachsens, Thüringen und Bayerns und einer kleinen Versorgung ausgehend von Süddeutschland in Richtung Nordrhein-Westfalens mit 1,33 GW.
+
+\begin{figure}[!h]
+  \begin{minipage}[b]{.4\linewidth} 
+     \includegraphics{images/AC-95.png}
+  \end{minipage}
+  \hspace{.1\linewidth}
+  \begin{minipage}[b]{.4\linewidth} 
+     \includegraphics{images/DC-95.png}
+  \end{minipage}
+  \caption{Verläufe der Wechselstrom- (links) und Gleichstromtrassen (rechts) der Simulation bei 95 \% CO2 Reduktion}
+  \label{image:Leitungen-95}
+\end{figure}
+
 
 \subsection{100 \%}
 %\renewcommand{\reduktion}{100}
