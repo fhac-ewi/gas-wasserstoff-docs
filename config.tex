@@ -29,6 +29,23 @@
 % Schriftart
 \usepackage{charter}
 
+% Quellen
+\usepackage[
+  backend   = biber,
+  style     = numeric,
+  sorting   = none,
+  backref   = true
+]{biblatex}
+\addbibresource{quellen.bib}
+\DefineBibliographyStrings{german}{
+  backrefpage = {referenziert auf Seite},
+  backrefpages = {referenziert auf den Seiten},
+  urlseen = {abgerufen am}
+}
+\DeclareFieldFormat{urldate}{\bibstring{urlseen}\space#1}
+\setcounter{biburllcpenalty}{7000}
+\setcounter{biburlucpenalty}{8000}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % Style
