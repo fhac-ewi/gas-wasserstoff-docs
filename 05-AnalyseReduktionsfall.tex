@@ -1,15 +1,11 @@
 \section{Analyse je Reduktionsfall}
 \label{sec:reduktionsfaelle}
-Nachdem im Kapitel \ref{sec:gesamtanalyse} die Komponentenbetrachtung im Fokus lag und grundlegende Aussagen getroffen wurden, wird nun der jeweilige CO2 Reduktionsfalls im Detail beschrieben und Besonderheiten hervorgehoben. Beginnend mit einer CO2 Reduktion von 75 \% folgen mit einer jeweiligen Änderung in fünfer Prozentpunkten die 80 bis 100 \% Fälle. In jeden Fall wird Bezug zu den ermittelten Werten genommen und eine Bewertung getroffen.
-
-\todo{Alternativer Text, Paul}
-Nachdem in Kapitel \ref{sec:gesamtanalyse} die Simulationen mit unterschiedlichen CO2 Reduktionszielen komponentenweise analysiert wurden, werden nachfolgend die verschiedenen Reduktionsfälle im Detail analysiert. In Tabelle \todo{ref} können die verschiedene Parameter der relevanten Kennzahlen für jeden Reduktionsfall übersichtlich dargestellt.
+Nachdem in Kapitel \ref{sec:gesamtanalyse} die Simulationen mit unterschiedlichen CO2 Reduktionszielen komponentenweise analysiert wurden, werden nachfolgend die verschiedenen Reduktionsfälle im Detail analysiert. In Tabelle \ref{tab:ueberreduktion} werden die verschiedene Parameter der relevanten Kennzahlen für jeden Reduktionsfall übersichtlich dargestellt.
 
 
 \todo{Prüfen, dass alle Zahlen mit Komma getrennt sind.}
 \todo{Leerzeichen vor Prozent ja}
 \todo{Einleitung schreiben}
-\todo{Abbildung aller Reduktionsfälle + Bearbeiter}
 \todo{CO2 mit tief gestellter 2 schreiben}
 
 
@@ -20,13 +16,13 @@ Nachdem in Kapitel \ref{sec:gesamtanalyse} die Simulationen mit unterschiedliche
      &
       \multicolumn{6}{c|}{\textbf{CO\textsubscript{2} Reduktion}} \\ \cline{2-7} 
      &
-      \multicolumn{1}{l|}{-75 \%} &
-      \multicolumn{1}{l|}{-80 \%} &
-      \multicolumn{1}{l|}{-85 \%} &
-      \multicolumn{1}{l|}{-90 \%} &
-      \multicolumn{1}{l|}{-95 \%} &
-      -100\% \\ \hline
-    {TAC {[}1 Mrd. €/a{]} (Gesamtsystemkosten)} &
+      \multicolumn{1}{l|}{\textbf{75 \%}} &
+      \multicolumn{1}{l|}{\textbf{80 \%}} &
+      \multicolumn{1}{l|}{\textbf{85 \%}} &
+      \multicolumn{1}{l|}{\textbf{90 \%}} &
+      \multicolumn{1}{l|}{\textbf{95 \%}} &
+      \textbf{100 \%} \\ \hline
+    {TAC (Gesamtsystemkosten) {[}Mrd. €/a{]}} &
       \multicolumn{1}{l|}{41,1} &
       \multicolumn{1}{l|}{41,9} &
       \multicolumn{1}{l|}{43,3} &
@@ -61,7 +57,7 @@ Nachdem in Kapitel \ref{sec:gesamtanalyse} die Simulationen mit unterschiedliche
       \multicolumn{1}{l|}{60,2} &
       \multicolumn{1}{l|}{121} &
       188,2 \\ \hline
-    {Speicherkapazität Batterie {[}GW{]}} &
+    {Speicherkapazität Batterie {[}GWh{]}} &
       \multicolumn{1}{l|}{\textless{}0,1} &
       \multicolumn{1}{l|}{1,1} &
       \multicolumn{1}{l|}{4,2} &
@@ -85,10 +81,10 @@ Nachdem in Kapitel \ref{sec:gesamtanalyse} die Simulationen mit unterschiedliche
     \end{tabular}
     \caption{Ergebnisse der Optimierung je Reduktionsfall
     }
-    \label{tab:my-table}
+    \label{tab:ueberreduktion}
     \end{table}
 
-\subsection{75 \%}
+\subsection{Reduktionsfall 75 \% (Güllü Arslan)}
 Bei einem C02 Reduktionsziel von 75 \% belaufen sich die Gesamtkosten für das Energiemodell auf ca. 41 Mrd. €. Der Reduktionsfall zeichnet sich durch hohe Erdgasimporte aus. Aufgrund der geringeren CO2-Restriktion behält die Stromerzeugung von Erdgaskraftwerken noch eine signifikante Rolle. Die Zwischenspeicherung in Batteriespeichern ist in diesem Modell marginal. Der Rechenlauf berücksichtigt für das Energiemodell keine Kosten für den Einkauf von Biogas und somit entfällt auch der Bedarf an Biogasanlagen um innerhalb der Restriktion zu bleiben. 
 
 Die Herstellung von Wasserstoff basiert auf Dampfreformierung und auf einheimische Wasserelektrolyse. In diesem Szenario wird der Bedarf an Wasserstoffspeicherung mittels Salzkavernen nicht in Anspruch genommen. Um die Treibhausreduktion um 75 \% zu schmälern, ist eine Langzeitspeicherung somit nicht erforderlich. Stattdessen ist festzustellen, dass zur Bedarfsdeckung von Wasserstoff der Ausbau der Pipeline zum Transport und Kurzspeicher vorhanden sein muss. Schlussendlich wurde die Pipllinekapazität für Wasserstoff so gewählt, dass die Nachfrage zu jeder Zeit gedeckt werden kann und die Restriktion bezüglich dem Co2 Ausstoßes eingehalten wird. 
@@ -103,7 +99,7 @@ Die Kosten für die Erzeugung fallen in dem 75 \% Szenario relativ hoch aus, was
 \smallimage{Energiemix75.png}{Reduktionsfall 75 \% - Mix Energiegewinnung}
 
 
-\subsection{80 \%}
+\subsection{Reduktionsfall 80 \% (Julien Tilly)}
 Die Gesamtsystemkosten betragen 42 Mrd. €. Sie steigen im Vergleich zum 75 \%-Reduktionsfall leicht an. Insbesondere die Kosten der Wind-Offshore-Anlagen (19 Mrd. €) steigerten sich um 6 Mrd. €. Diese Steigerung wird aber teilweise durch die sinkenden Erdgas-Importe ausglichen. Hierbei verringern sich die Kosten von 15 auf 12 Mrd. €. Dies lässt sich durch die Verringerung der CO2-Emissionen erklären. Die Kosten der restlichen Erzeugungsarten sinken um etwa 2 Mrd. €.
 
 Werden die Gesamtsystemkosten nach Erzeugung, Umwandlung, Speicherung und Übertragung aufgeteilt, so liegt der Schwerpunkt bei der Erzeugung (37 Mrd. €). Die Umwandlung in den Elektrolyse-Anlagen ist mit 4,5 Mrd. € der zweitteuerste Kostenpunkt. Darauf folgt die Übertragung mit 123,7 Mio. Euro. Mit einem Anteil von 0,3 \% an den Gesamtkosten ist die Speicherung weit abgeschlagen.
@@ -119,7 +115,7 @@ Die installierte H2-Pipelinekapazität steht unverändert bei 28,99 GW, da sich 
 Sowohl bei den Kosten als auch bei der installierten Leistung hat die Offshore-Windkraft den größten Anteil. Hingegen gehen die Erzeugung aus Erdgas und die Importe des Erdgases zurück. Wobei 47 \% der erzeugten Energie weiter mit Erdgas produziert werden. Die restliche Erzeugung wird von erneuerbaren Energien gedeckt. Für kurzfristige Lastspitzen oder Engpässe werden vermehrt Batteriespeicher eingesetzt. Längerfristige Speicherung findet nicht statt, da keine Salzkarvenspeicher genutzt werden.
 
 
-\subsection{85 \%}
+\subsection{Reduktionsfall 85 \% (Melanie Ecker)}
 Für den Reduktionsfall von CO2 um 85 \% würde das Gesamtsystem 43 Mrd. € kosten. Das System fokussiert sich dabei auf den Wechsel von Erdgas auf Biogas, von den Importen über die Gasanlagen bis hinzu den Speichern. Dabei werden erstmalig Biogasanlagen und die Speichermöglichkeit von Biogas in Salzkavernen genutzt.
 
 Die Kosten des Gesamtsystems schlüsseln sich dabei auf in 38 Mrd. € für die Erzeugung, 4,3 Mrd. € für die Umwandlung, etwas weniger als 0,1 Mrd. € für die Speicherung und 0,1 Mrd. € für die Übertragung.
@@ -142,7 +138,7 @@ Die installierte Kapazität der H2-Pipeline ist konstant geblieben, da die Leist
 Beim Energiesystem im Reduktionsfall 85 \% ist Erdgas nicht mehr der größte Energieträger, stattdessen hat die Erzeugung durch Wind Offshore jetzt den größten Anteil.
 Dadurch und durch den beginnenden Austausch von Natural Gas durch Biogas, sowie der Speicherung von Biogas in Kavernen und der generellen höheren Speichernutzung werden die CO2-Emissionen um 85 \% reduziert.
 
-\subsection{90 \%}
+\subsection{Reduktionsfall 90 \% (Paul Krüger)}
 Der Reduktionsfall 90 \% zeichnet sich dadurch aus, dass dieser als einziger untersuchter Reduktionsfall ohne Batteriespeicher zur Bereitstellung kurzfristig verfüg\-barer Flexibilität auskommt. Dies ist durch einen Salzkarvernenspeicher für Wasserstoff möglich, der in diesem Reduktionsfall erstmalig verwendet wird. Durch den Speicher kann die Herstellung von Wasserstoff durch Elektrolyse von der Wasserstoffnachfrage entkoppelt werden. Die Elektrolyse kann dadurch die erforderliche Flexibilität in dem Stromnetz bereitstellen.
 
 Zur Erreichung der CO2 Reduzierung um 90 \% im Vergleich zu dem Jahr 1990 muss die Verbrennung von Methan in GuD-Kraftwerken weiter reduziert werden. Denn dies ist in dem Energiesystem der einzige Anlagentyp, bei dem CO2 freigesetzt wird. Im Vergleich zu dem Reduktionsfall 85 \% wird der Methan Import um 33 \% auf 182.090 GWh LHV gesenkt. Die maximale Leistung der GuD-Kraftwerke zur Umwandlung von Methan zu Strom sinkt um 19 \% auf 81,8 GW. Die unterschiedlichen prozentualen Rückgänge zwischen Methan Import und GuD-Kraftwerken lässt darauf schließen, dass der Stellenwert von GuD-Kraftwerken als flexible Energiegewinnungsanlage zur Sicherung von Versorgungsengpässen in diesem Szenario weiterhin hoch ist.
@@ -176,7 +172,7 @@ Das erstellte Pipelinenetz für die Verteilung von Wasserstoff kann der Abbildun
 Auch wenn die Verbrennung von Methan eine vergleichsweise günstige und flexible Energiegewinnung ermöglicht, muss dieser Anteil zur Erreichung des Reduktionsziels deutlich gesenkt werden. Die fehlende Erzeugung wird durch die erneuerbaren Energien aufgefangen, die die hohe Flexibilität nicht mehr gewährleisten können. Zur Aufrechterhaltung der Versorgungssicherheit sind deshalb andere Erzeuger oder flexible Verbraucher erforderlich. In diesem Reduktionsfall wird neben den Pumpspeichern vermehrt auf Biogas GuD-Kraftwerke gesetzt und erstmals durch einen Energiespeicher die Elektrolyseure als flexible Verbraucher in dem Stromnetz eingebunden.
 Zur Erreichung des Reduktionsziels von 90 \% wurde ein Energiesystem mit Gesamtkosten von 45 Mrd. € durch das Framework FINE erzeugt.
 
-\subsection{95 \%}
+\subsection{Reduktionsfall 95 \% (Florian Steinberger)}
 
 \smallimage{Energiemix95.png}{Reduktionsfall 95 \% - Gesamtenergieverteilung bei 95 \% Reduktion im Jahr 2050}
 
@@ -231,9 +227,7 @@ Das Wechselstromnetz wird dabei über alle Regionen in Nord- und Südrichtung ve
 \end{figure}
 
 
-\subsection{100 \%}
-%\renewcommand{\reduktion}{100}
-%\input{Reduktionsfall}
+\subsection{Reduktionsfall 100 \% (Mehdi Abbadi)}
 Die Gesamtsystemkosten betragen 52 Mrd. €. Sie steigen im Vergleich zum alle Reduktionsfälle an. Insbesondere die Kosten der Wind-Offshore-Anlagen (22 Mrd. €) steigerten sich um 6 Mrd. €. Diese Steigerung wird aber teilweise durch die sinkenden Erdgas-Importe ausglichen. Hierbei verringern sich die Kosten von 15 auf 12 Mrd. €. Dies lässt sich durch die Verringerung der CO2-Emissionen erklären. Die Kosten der restlichen Erzeugungsarten sinken um etwa 2 Mrd. €.
 
 Die Kosten der Wind-Offshore Anlagen sind massiv gestiegen im Vergleich zur Anfang Szenario (22 Mrd. €), somit steigen die Gesamtsystemkosten in höchst Szenario , betragen 52 Mrd. Dies ist ersichtlich da , die Kosten für den Gas-Import sinken . Diese Steigerung  ist auch wegen von verschiedene Speicherkapazitäten wobei die H2 Salzkavernen zum Einsatz ab dem 85 \% Fall zur Speicherung von Wasserstoff.
