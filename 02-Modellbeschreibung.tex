@@ -6,7 +6,7 @@ In diesem Kapitel wird das Energiesystemmodell für Deutschland bestehend aus St
     \centering
     \begin{tabular}{|lcll|}
         \hline
-        \multicolumn{1}{|l|}{\textbf{Erzeugung (EE)}} & \multicolumn{1}{l|}{Wind Onshore} & \multicolumn{1}{l|}{Wind Offshore} & Photovoltaik \\ \hline
+        \multicolumn{1}{|l|}{\textbf{Erzeugung (EE)}} & \multicolumn{1}{l|}{Wind onshore} & \multicolumn{1}{l|}{Wind offshore} & Photovoltaik \\ \hline
         \multicolumn{1}{|l|}{\textbf{Stromnetz AC}}     & \multicolumn{3}{c|}{vorhanden}                \\ \hline
         \multicolumn{1}{|l|}{\textbf{Stromnetz DC}}     & \multicolumn{3}{c|}{vorhanden}                \\ \hline
         \multicolumn{1}{|l|}{\textbf{H\textsubscript{2} - Pipeline}}    & \multicolumn{3}{c|}{vorhanden}                \\ \hline
@@ -22,7 +22,7 @@ Mit Hilfe des Frameworks FINE wird im weiteren Verlauf dieser Arbeit die Modelli
 
 \tinyimage{DEinCluster.png}{Deutschland in acht Cluster aufgeteilt}
 
-Das Modell bezieht sich ausschließlich auf die Region Deutschland. Wie in Abbildung \ref{image:DEinCluster.png} erkennbar ist, wird Deutschland in acht Cluster unterteilt, welche sich durch unterschiedliche Kapazitätsgrenzen und maximalen Betriebsraten unterscheiden. Beispielsweise kann in Cluster 4, welches im Süden von Deutschland liegt, keine Offshore Windparks gebaut werden, da dieses Cluster keinen Zugang zum Meer hat. Ebenso unterscheiden sich die vorherrschenden Winde und Sonneneinstrahlung in den Clustern und haben damit Auswirkung auf die maximal mögliche Arbeit erneuerbarer Erzeugungsanlagen.  
+Das Modell bezieht sich ausschließlich auf die Region Deutschland. Wie in Abbildung \ref{image:DEinCluster.png} erkennbar ist, wird Deutschland in acht Cluster unterteilt, welche sich durch unterschiedliche Kapazitätsgrenzen und maximalen Betriebsraten unterscheiden. Beispielsweise kann in Cluster 4, welches im Süden von Deutschland liegt, keine offshore Windparks gebaut werden, da dieses Cluster keinen Zugang zum Meer hat. Ebenso unterscheiden sich die vorherrschenden Winde und Sonneneinstrahlung in den Clustern und haben damit Auswirkung auf die maximal mögliche Arbeit erneuerbarer Erzeugungsanlagen.  
 
 Bei der Modellierung muss in jedem Cluster der Energiebedarf von Strom und Wasserstoff zu jedem Zeitpunkt gedeckt sein. Für die Übertragung von Strom und Wasserstoff zwischen verschiedenen Clustern müssen Übertragungsnetze bzw. Pipelines mit entsprechenden Kapazitäten vorhanden sein. 
 
@@ -38,7 +38,7 @@ Zusätzlich wird in dem Modell CO\textsubscript{2} als Commodity betrachtet und 
 \subsection{Energienachfrage}
 In dem Energiesystem wird ausschließlich Strom und Wasserstoff nachgefragt. Für beide Energieträger ist in jedem Cluster ein Lastgang in stündlicher Auflösung für das gesamte Jahr hinterlegt, der die Nachfrage in der jeweiligen Region bestmöglich abbildet. Der Abbildung \ref{image:Demand_electricity_C0_operation_0.8.png} kann exemplarisch das Lastprofil für Strom in Cluster 1 entnommen werden. 
 
-\smallimage{Demand_electricity_C0_operation_0.8.png}{Lastgang Stromnachfrage in Cluster Eins}
+\smallimage{Demand_electricity_C0_operation_0.8.png}{Lastgang Stromnachfrage in Cluster 1}
 
 \subsection{Energiegewinnung}
 Zur Energiegewinnung können in dem Modell verschiedene Quellen genutzt werden.
@@ -62,7 +62,7 @@ Auch Biogas existiert bereits in Deutschland. In den verschiedenen Clustern gibt
 
 Methan und Biogas können nicht direkt zur Deckung der Strom- bzw. Wasserstoffnachfrage eingesetzt werden, sondern müssen erst in diese umgewandelt werden. Dazu können in diesem Modell verschiedene Umwandler genutzt werden, die in dem nachfolgenden Abschnitt beschrieben werden.
 
-Eine weitere Möglichkeit zur Energiegewinnung von Strom sind erneuerbare Erzeugungsanlagen. In diesem Modell können Wind Onshore, Wind Offshore und Photovoltaikanlagen verwendet werden. Je Cluster wird die maximal installierbare Kapazität vorgegeben. 
+Eine weitere Möglichkeit zur Energiegewinnung von Strom sind erneuerbare Erzeugungsanlagen. In diesem Modell können Wind onshore, Wind offshore und Photovoltaikanlagen verwendet werden. Je Cluster wird die maximal installierbare Kapazität vorgegeben. 
 Anders als konventionelle Kraftwerke können erneuerbare Erzeugungsanlagen nicht selbstbestimmt produzieren, sondern sind auf äußere Einflüsse (vorherrschende Winde bzw. Sonneneinstrahlung) angewiesen. Um dies in dem Modell abzubilden, wird je Cluster und Anlagentyp eine maximale Betriebsrate in \% für jeden Zeitschritt festgelegt. 
 
 
@@ -71,8 +71,8 @@ Anders als konventionelle Kraftwerke können erneuerbare Erzeugungsanlagen nicht
     \begin{tabular}{|l|c|c|c|}
         \hline
                                 & \textbf{Investition} & \textbf{Betriebskosten} & \textbf{Abschreibungsdauer} \\ \hline
-        \textbf{Wind Onshore}  & 1,1 Mrd. €                                     & 22 Mio. €                                  & 20 Jahre                    \\ \hline
-        \textbf{Wind Offshore} & 2,3 Mrd. €                                     & 46 Mio. €                                  & 20 Jahre                    \\ \hline
+        \textbf{Wind onshore}  & 1,1 Mrd. €                                     & 22 Mio. €                                  & 20 Jahre                    \\ \hline
+        \textbf{Wind offshore} & 2,3 Mrd. €                                     & 46 Mio. €                                  & 20 Jahre                    \\ \hline
         \textbf{Photovoltaik}  & 0,65 Mrd. €                                    & 13 Mio. €                                  & 25 Jahre                    \\ \hline
     \end{tabular}
     \caption{Ökonomische Parameter für Energieerzeugungsanlagen}
@@ -83,7 +83,7 @@ Zusätzlich werden je Anlage ökonomische Parameter zur Bestimmung der Gesamtkos
 
 
 \subsection{Energieumwandlung}
-Zur Energieumwandlung zwischen den Energieträgern werden Umwandlungsanlagen benötigt. So kann beispielsweise durch ein GuD-Kraftwerk Methan in Strom umgewandelt werden. In Tabelle \ref{tab:param-umwandlung-tec} sind die Wirkungsgrade typischer Anlagen und sowie die dabei freigesetzte Menge CO\textsubscript{2} ersichtlich. Diese technischen Parameter werden bei der Modellierung berücksichtigt.
+Zur Energieumwandlung zwischen den Energieträgern werden Umwandlungsanlagen be-nötigt. So kann beispielsweise durch ein GuD-Kraftwerk Methan in Strom umgewandelt werden. In Tabelle \ref{tab:param-umwandlung-tec} sind die Wirkungsgrade typischer Anlagen und sowie die dabei freigesetzte Menge CO\textsubscript{2} ersichtlich. Diese technischen Parameter werden bei der Modellierung berücksichtigt.
 
 \begin{table}[ht!]
     \centering
@@ -156,7 +156,7 @@ Analog zu der Energieerzeugung können die Speicher mit einer maximalen Kapazit�
 In dem vorliegenden Modell wird für die Stromübertragung auf die bestehenden Wechsel\-stromnetz (AC) und Gleichstromnetze (DC) zurückgegriffen.
 Das AC Netz verbindet einige benachbarte Cluster miteinander und ermöglicht eine verlustfreie Übertragung über kurze Strecken. Das DC Netz verbindet entfernte Cluster miteinander und kann dadurch Strom über weite Strecken übertragen. Dies ist jedoch nicht verlustfrei möglich.
 
-Neben Strom können die Energieträger Biogas und Wasserstoff mithilfe von zwei voneinander getrennten Pipeline-Netzen theoretisch zwischen allen benachbarten Clustern verlustfrei übertragen werden. Da diese Netze zum heutigen Zeitpunkt nicht existieren, können diese bei der Modellierung entsprechend der benötigten Kapazitäten installiert werden. Dabei gilt es jedoch zu beachten, dass zwischen zwei Regionen Pipelines bis zu einer maximalen Kapazität von 15 GW verwendet werden dürfen und alle Übertragungsstrecken in Summe 300 GW nicht zu übersteigen dürfen. Die Investitionskosten für eine Wasserstoff Pipeline zwischen zwei Clustern betragen einmalig 330.000 € plus 177.000 € pro Kilometer. Die Biogas Pipelines kosten einmalig 314.0000 € plus 37.000 € € pro Kilometer. Beide Pipelines haben eine Lebensdauer von 40 Jahre und haben keine operativen Kosten.
+Neben Strom können die Energieträger Biogas und Wasserstoff mithilfe von zwei voneinander getrennten Pipeline-Netzen theoretisch zwischen allen benachbarten Clustern verlustfrei übertragen werden. Da diese Netze zum heutigen Zeitpunkt nicht existieren, können diese bei der Modellierung entsprechend der benötigten Kapazitäten installiert werden. Dabei gilt es jedoch zu beachten, dass zwischen zwei Regionen Pipelines bis zu einer maximalen Kapazität von 15 GW verwendet werden dürfen und alle Übertragungsstrecken in Summe 300 GW nicht zu übersteigen dürfen. Die Investitionskosten für eine Wasserstoff Pipeline zwischen zwei Clustern betragen einmalig 330.000 € plus 177.000 € pro Kilometer. Die Biogas Pipelines kosten einmalig 314.0000 € plus 37.000 € pro Kilometer. Beide Pipelines haben eine Lebensdauer von 40 Jahre und haben keine operativen Kosten.
 
 In der Modellierung wird die Übertragung von Methan zwischen den Regionen nicht berück\-sichtigt. Dies ist damit zu begründen, dass Methan in jedem Cluster importiert werden kann. Eine Berücksichtigung der Übertragung zwischen den Clustern kann deshalb bei der Modellierung vernachlässigt werden.
 
