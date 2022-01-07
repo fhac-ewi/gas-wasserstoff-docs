@@ -22,7 +22,7 @@ Mit Hilfe des Frameworks FINE wird im weiteren Verlauf dieser Arbeit die Modelli
 
 \tinyimage{DEinCluster.png}{Deutschland in acht Cluster aufgeteilt}
 
-Das Modell bezieht sich ausschließlich auf die Region Deutschland. Wie in Abbildung \ref{image:DEinCluster.png} erkennbar ist, wird Deutschland in acht Cluster unterteilt, welche sich durch unterschiedliche Kapazitätsgrenzen und ggf. Lastgänge für alle Komponenten zur Erzeugung, Umwandlung und Speicherung \todo{kein Transport?} unterscheiden. Beispielsweise kann in Cluster 4, welches im Süden von Deutschland liegt, keine Offshore Windparks gebaut werden, da dieses Cluster keinen Zugang zum Meer hat. 
+Das Modell bezieht sich ausschließlich auf die Region Deutschland. Wie in Abbildung \ref{image:DEinCluster.png} erkennbar ist, wird Deutschland in acht Cluster unterteilt, welche sich durch unterschiedliche Kapazitätsgrenzen und maximalen Betriebsraten unterscheiden. Beispielsweise kann in Cluster 4, welches im Süden von Deutschland liegt, keine Offshore Windparks gebaut werden, da dieses Cluster keinen Zugang zum Meer hat. Ebenso unterscheiden sich die vorherrschenden Winde und Sonneneinstrahlung in den Clustern und haben damit Auswirkung auf die maximal mögliche Arbeit erneuerbarer Erzeugungsanlagen.  
 
 Bei der Modellierung muss in jedem Cluster der Energiebedarf von Strom und Wasserstoff zu jedem Zeitpunkt gedeckt sein. Für die Übertragung von Strom und Wasserstoff zwischen verschiedenen Clustern müssen Übertragungsnetze bzw. Pipelines mit entsprechenden Kapazitäten vorhanden sein. 
 
@@ -32,7 +32,7 @@ Um die Kosten einer Anlage zu berechnen, werden die Betriebskosten und die Annui
 \subsection{Energieträger}
 In dem Energiesystem werden verschiedene Rohstoffe (Commodities) als Energieträger eingesetzt. Dazu zählen Strom, Wasserstoff, Methan (Erdgas) und Biogas. Weitere fossile Energieträger, wie Braunkohle, Steinkohle, Öl und Uran sind in diesem Modell nicht betrachtet, da diese durch gesetzliche Vorgaben bis zum Jahr 2050 nicht mehr zur Energiegewinnung eingesetzt werden dürfen. \cite{bund}
 
-Zusätzlich wird in dem Modell CO\textsubscript{2} als Commodity betrachtet und durch ein jährliches Limit beschränkt. Der Ausgangswert für die verschiedenen Reduktionsfälle wurde im Jahr 1990 ermittelt und liegt bei 366 Mio. Tonnen pro Jahr\todo{vllt Quelle?}. 
+Zusätzlich wird in dem Modell CO\textsubscript{2} als Commodity betrachtet und durch ein jährliches Limit beschränkt. Der Ausgangswert für die verschiedenen Reduktionsfälle wurde im Jahr 1990 ermittelt und liegt bei 366 Mio. Tonnen pro Jahr.
 
 
 \subsection{Energienachfrage}
@@ -62,6 +62,10 @@ Auch Biogas existiert bereits in Deutschland. In den verschiedenen Clustern gibt
 
 Methan und Biogas können nicht direkt zur Deckung der Strom- bzw. Wasserstoffnachfrage eingesetzt werden, sondern müssen erst in diese umgewandelt werden. Dazu können in diesem Modell verschiedene Umwandler genutzt werden, die in dem nachfolgenden Abschnitt beschrieben werden.
 
+Eine weitere Möglichkeit zur Energiegewinnung von Strom sind erneuerbare Erzeugungsanlagen. In diesem Modell können Wind Onshore, Wind Offshore und Photovoltaikanlagen verwendet werden. Je Cluster wird die maximal installierbare Kapazität vorgegeben. 
+Anders als konventionelle Kraftwerke können erneuerbare Erzeugungsanlagen nicht selbstbestimmt produzieren, sondern sind auf äußere Einflüsse (vorherrschende Winde bzw. Sonneneinstrahlung) angewiesen. Um dies in dem Modell abzubilden, wird je Cluster und Anlagentyp eine maximale Betriebsrate in \% für jeden Zeitschritt festgelegt. 
+
+
 \begin{table}[ht!]
     \centering
     \begin{tabular}{|l|c|c|c|}
@@ -75,10 +79,8 @@ Methan und Biogas können nicht direkt zur Deckung der Strom- bzw. Wasserstoffna
     \label{tab:param-energie}
 \end{table}
 
-Eine weitere Möglichkeit zur Energiegewinnung von Strom sind erneuerbare Erzeugungsanlagen. In diesem Modell können Wind Onshore, Wind Offshore und Photovoltaikanlagen verwendet werden. Je Cluster wird die maximal installierbare Kapazität vorgegeben. 
-Anders als konventionelle Kraftwerke können erneuerbare Erzeugungsanlagen nicht selbstbestimmt produzieren, sondern sind auf äußere Einflüsse (vorherrschende Winde bzw. Sonneneinstrahlung) angewiesen. Um dies in dem Modell abzubilden, wird je Cluster und Anlagentyp eine maximale Betriebsrate in \% für jeden Zeitschritt festgelegt. Zusätzlich werden je Anlage ökonomische Parameter zur Bestimmung der Gesamtkosten in Abhängigkeit der installierten Kapazität angegeben. Diese können Tabelle \ref{tab:param-energie} entnommen werden. Die Investitionskosten und Betriebskosten verstehen sich auf je 1 GW installierte Leistung.
+Zusätzlich werden je Anlage ökonomische Parameter zur Bestimmung der Gesamtkosten in Abhängigkeit der installierten Kapazität angegeben. Diese können Tabelle \ref{tab:param-energie} entnommen werden. Die Investitionskosten und Betriebskosten verstehen sich auf je 1 GW installierte Leistung.
 
-\todo{Ggf. noch ein Bild zur Energiegewinnung und die Tabelle öko Param wieder ans Ende stellen?}
 
 \subsection{Energieumwandlung}
 Zur Energieumwandlung zwischen den Energieträgern werden Umwandlungsanlagen benötigt. So kann beispielsweise durch ein GuD-Kraftwerk Methan in Strom umgewandelt werden. In Tabelle \ref{tab:param-umwandlung-tec} sind die Wirkungsgrade typischer Anlagen und sowie die dabei freigesetzte Menge CO\textsubscript{2} ersichtlich. Diese technischen Parameter werden bei der Modellierung berücksichtigt.
@@ -100,7 +102,7 @@ Zur Energieumwandlung zwischen den Energieträgern werden Umwandlungsanlagen ben
     \caption{Technische Parameter für Energieumwandlungsanlagen}
     \label{tab:param-umwandlung-tec}
 \end{table}
-\todo{Unersichtlich was alles zu GuD-Kraftwerk gehört!}
+
 Lediglich bei der Verbrennung von Methan wird klimaschädliches CO\textsubscript{2} freigesetzt. Für die Erzeugung von 1 GWh elektrischer Energie (Strom) werden 335 Tonnen CO\textsubscript{2} freigesetzt. Bei der Verbrennung von Biogas wird auch CO\textsubscript{2} freigesetzt, jedoch wurde dieses zuvor von den Pflanzen gebunden. Deshalb ist diese Umwandlung CO\textsubscript{2}-neutral \cite{bdew43}. 
 Bei der Verbrennung von Wasserstoff wird kein CO\textsubscript{2} ausgestoßen \cite{bdew42}. 
 
