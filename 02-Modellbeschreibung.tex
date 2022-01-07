@@ -42,8 +42,8 @@ In dem Energiesystem wird ausschließlich Strom und Wasserstoff nachgefragt. Fü
 
 \subsection{Energiegewinnung}
 Zur Energiegewinnung können in dem Modell verschiedene Quellen genutzt werden.
-
-Zum einen können bereits existierende Laufwasserkraftwerken mit einer Gesamtleistung von 3,8 GW zu geringen Betriebskosten von 790 Mio. € genutzt werden. Aufgrund der festen Betriebsrate, die durch die Flüsse vorgegeben ist, können diese in dem Beispieljahr maximal 17.397 GWh Strom erzeugen.
+\newline
+Die bereits existierenden Laufwasserkraftwerken können mit einer Gesamtleistung von 3,8 GW zu geringen Betriebskosten von 790 Mio. € genutzt werden. Aufgrund der festen Betriebsrate, die durch die Flüsse vorgegeben ist, können diese in dem Beispieljahr maximal 17.397 GWh Strom erzeugen.
 
 Deutschland verfügt bereits über eine funktionierende Infrastruktur für Erdgas. Bei der Modellierung kann auf diese Infrastruktur zurückgegriffen werden, indem der Energieträger Methan (Hauptbestandteil in Erdgas) durch Zukäufe importiert und anschließend in dem Energiesystem genutzt werden kann. Für das Modell wird angenommen, dass Methan in allen Clustern in unbegrenzter Menge zu einem Festpreis von 33.100 € je GWh LWH eingekauft werden kann.
 
@@ -127,10 +127,10 @@ Die ökonomischen Parametern aller Umwandlungsanlagen können der Tabelle \ref{t
 \FloatBarrier
 
 \subsection{Energiespeicherung}
-Zu jedem Zeitschritt muss die Nachfrage durch ein Angebot gedeckt sein. Um dies zu gewährleisten, werden je nach gewählten Erzeugungsanlagen Speicher zwingend benötigt.
+Zu jedem Zeitschritt muss die Nachfrage durch Angebot gedeckt sein. Um dies zu gewährleisten, werden je nach gewählten Erzeugungsanlagen Speicher zwingend benötigt.
 In dem Beispielszenario können drei Speicherarten verwendet werden:
 \begin{itemize}
-    \item \textbf{Batteriespeicher} (kurzfristig)\\Aufgrund der schnellen Ein-/Ausspeicherraten, die eine vollständige Entladung innerhalb einer Stunde ermöglichen, eignet sich der Batteriespeicher für den schnellen Leistungsausgleich. Durch die hohen Investitionskosten pro Kapazität und der vergleichsweisen hohen Selbstentladung von 3 \% eignet sich der Speicher besonders für den kurzfristigen Einsatz.
+    \item \textbf{Batteriespeicher} (kurzfristig)\\Aufgrund der schnellen Ein-/Ausspeicherraten, die eine vollständige Entladung innerhalb einer Stunde ermöglichen, eignet sich der Batteriespeicher für den schnellen Leistungsausgleich. Durch die hohen Investitionskosten pro Kapazität und der vergleichsweise hohen Selbstentladung von 3 \% eignet sich der Speicher besonders für den kurzfristigen Einsatz.
     \item \textbf{Pumpspeicher} (mittelfristig)\\Eine vollständige Endladung des Speichers braucht ca. 6 Stunden. Der Speicher ist in dem Szenario bereits installiert.
     \item \textbf{Salzkavernenspeicher} (langfristig)\\Kavernenspeicher können verhältnismäßig viel Energie in Form von Gas speichern. Eine vollständige Entladung braucht ca. 20 Tage. Zudem gibt es (in unserem Beispiel) keine Selbstentladung, weshalb der Speicher für die langfristige Speicherung bestens geeignet ist.   
 \end{itemize}    
@@ -156,7 +156,7 @@ Analog zu der Energieerzeugung können die Speicher mit einer maximalen Kapazit�
 In dem vorliegenden Modell wird für die Stromübertragung auf die bestehenden Wechsel\-stromnetz (AC) und Gleichstromnetze (DC) zurückgegriffen.
 Das AC Netz verbindet einige benachbarte Cluster miteinander und ermöglicht eine verlustfreie Übertragung über kurze Strecken. Das DC Netz verbindet entfernte Cluster miteinander und kann dadurch Strom über weite Strecken übertragen. Dies ist jedoch nicht verlustfrei möglich.
 
-Neben Strom können die Energieträger Biogas und Wasserstoff mithilfe von zwei voneinander getrennten Pipeline-Netzen theoretisch zwischen allen benachbarten Clustern verlustfrei übertragen werden. Da diese Netze zum heutigen Zeitpunkt nicht existieren, können diese bei der Modellierung entsprechend der benötigten Kapazitäten installiert werden. Dabei gilt es jedoch zu beachten, dass zwischen zwei Regionen Pipelines bis zu einer maximalen Kapazität von 15 GW verwendet werden dürfen und alle Übertragungsstrecken in Summe 300 GW nicht zu übersteigen dürfen. Die Investitionskosten für eine Wasserstoff Pipeline zwischen zwei Clustern betragen einmalig 330.000 € plus 177.000 € pro Kilometer. Die Biogas Pipelines kosten einmalig 314.0000 € plus 37.000 € pro Kilometer. Beide Pipelines haben eine Lebensdauer von 40 Jahre und haben keine operativen Kosten.
+Neben Strom können die Energieträger Biogas und Wasserstoff mithilfe von zwei voneinander getrennten Pipeline-Netzen theoretisch zwischen allen benachbarten Clustern verlustfrei übertragen werden. Da diese Netze zum heutigen Zeitpunkt nicht existieren, können diese bei der Modellierung entsprechend der benötigten Kapazitäten installiert werden. Dabei gilt es jedoch zu beachten, dass zwischen zwei Regionen Pipelines bis zu einer maximalen Kapazität von 15 GW verwendet werden dürfen und alle Übertragungsstrecken in Summe 300 GW nicht übersteigen dürfen. Die Investitionskosten für eine Wasserstoff Pipeline zwischen zwei Clustern betragen einmalig 330.000 € plus 177.000 € pro Kilometer. Die Biogas Pipelines kosten einmalig 314.000 € plus 37.000 € pro Kilometer. Beide Pipelines haben eine Lebensdauer von 40 Jahre und haben keine operativen Kosten.
 
 In der Modellierung wird die Übertragung von Methan zwischen den Regionen nicht berück\-sichtigt. Dies ist damit zu begründen, dass Methan in jedem Cluster importiert werden kann. Eine Berücksichtigung der Übertragung zwischen den Clustern kann deshalb bei der Modellierung vernachlässigt werden.
 
