@@ -2,7 +2,7 @@
 Zur Modellierung des Energiesystemmodells wurde das Framework FINE von dem Forschungszentrum Jülich eingesetzt.
 Dieses Framework ermöglicht die einfache Erstellung eines Energiemodells mit verschiedenen Regionen und Energiearten. Alle benötigten Komponenten, wie Energiequellen, Verbraucher, Speicher, Umwandler und Netze, können mit technischen und ökonomischen Merkmalen hinzugefügt werden. 
 
-Das FZ Jülich stellt diverse Beispiele bereit, die die Anwendung des Frameworks exemplarisch zeigen. Unter anderem ein Jupyter Notebook, welches ein Energiesystem mit acht Regionen modelliert und unter Berücksichtigung der Rahmenbedingungen optimiert. \todo{Quelle} Das Notebook wurde entsprechend der Aufgabenstellung (siehe Kapitel \ref{chap:modellbeschreibung}) angepasst. Alle Rechenläufe werden mit der gleichen Datenbasis durchgeführt. Lediglich der Parameter ``zulässiger CO2 Ausstoß`` wird für die unterschiedlichen Rechenläufe verändert. 
+Das FZ Jülich stellt diverse Beispiele bereit, die die Anwendung des Frameworks exemplarisch zeigen.\footnote{Beispiele FINE Framework: \url{https://github.com/FZJ-IEK3-VSA/FINE/tree/master/examples/}} Unter anderem ein Jupyter Notebook, welches ein Energiesystem mit acht Regionen modelliert und unter Berücksichtigung der Rahmenbedingungen optimiert. Das Notebook wurde entsprechend der Aufgabenstellung (siehe Kapitel \ref{chap:modellbeschreibung}) angepasst. Alle Rechenläufe werden mit der gleichen Datenbasis durchgeführt. Lediglich der Parameter ``zulässiger CO2 Ausstoß`` wird für die unterschiedlichen Rechenläufe verändert. 
 
 Mithilfe des Gurobi Solvers wurde das Energiesystem hinsichtlich der Kosten unter Einhaltung der zuvor gesetzten Grenze für den CO2 Ausstoß optimiert. Das Ergebnis der Optimierung ist ein Energiesystem, bei dem in jedem Zeitschritt die Nachfrage in allen Clustern gedeckt und das CO2 Reduktionsziel eingehalten ist. Die Ausgabe von FINE ist vielseitig. Für jede Komponente und Region werden unter anderem die installierte Kapazität, der Fahrplan und die daraus resultierenden Kosten ausgegeben.
 
@@ -10,5 +10,5 @@ Die Ausgabe der Optimierung wird in eine Excel-Datei exportiert, damit die Ergeb
 
 Die Ausführung des Jupyter Notebooks für die sechs verschiedenen Reduktionsfälle wurde mithilfe eines Shell Scripts automatisiert. Das Script kopiert das Notebook, setzt das jährliche Limit für den CO2 Ausstoß entsprechend des Reduktionsfalls ein und führt das Notebook anschließend aus. Das Ergebnis ist für jeden Reduktionsfall eine Excel-Datei, die alle relevanten Parameter zur Analyse beinhaltet.
 
-Alle erstellten Notebooks, Ergebnisse und Bilder sind auf GitHub\footnote{Link zum Repository: \url{https://github.com/fhac-ewi/gas-wasserstoff}} abgelegt.  
+Alle erstellten Notebooks, Ergebnisse und Bilder sind auf GitHub\footnote{Code Repository: \url{https://github.com/fhac-ewi/gas-wasserstoff}} abgelegt.  
 Die wichtigsten Parameter aller Reduktionsfälle werden in einer Datei zusammengefügt, damit diese in den nachfolgenden Kapiteln analysiert werden können. 

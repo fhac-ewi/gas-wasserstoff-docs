@@ -1,11 +1,22 @@
 \section{Fazit}
-Anhand des Modells konnte dargestellt werden, dass die unterschiedlichen Szenarien zum Teil und insbesondere in Abhängigkeit der Treibhausreduzierungsziele, stark voneinander abweichen. Der Anwender kann sich mit Hilfe dieses Programms ein Bild über die erforderlichen Maßnahmen bis zur 100 \%igen CO2-Neutralität machen. 
-Festzuhalten ist der überproportionale Bedarf an Energie, der die Grundlage für das zu entwickelnde Energiesystem darstellt. Daneben stellen die PtX-Anlagen ein weiteres wichtiges Element zur Sektorenkopplung dar, um den Wasserstoffbedarf neben Importen selber zu decken. 
-Die ambitionierten CO2 Ziele der Bundesregierung lassen aus heutiger Sicht eine nicht Erreichung mutmaßen. Umso wichtiger erscheinen die daraus gewonnenen Erkenntnisse, um den Wert annähernd zu erreichen. Der Stromerzeugungsmix wird als zwingende Voraussetzung ermittelt, so dass der Ausbau der erneuerbaren Energien einen sehr hohen Stellenwert hat. Somit wird die Zubaurate an EE in den Folgejahren signifikant steigen müssen. 
-Neben der Erzeugung kann der Speicherung von H2 und Energie eine tragende Rolle zugesprochen werden. Die Erschließung der Speicher an das Energiesystem in Deutschland ermöglichen eine Langzeitspeicherung und unterstützen die Treibhausreduktionsziele. 
+In einem CO2 neutralen Energiesystem muss die der konventionelle Energiegewinnung durch Verbrennung von Erdgas vollständig zurückgebaut werden. Die durchgeführte Modellierung und Analyse verschiedener Reduktionsziele (vgl. Kapitel \ref{sec:reduktionsfaelle}) zeigt dabei detailliert die Auswirkungen des Rückbaus auf das Gesamtsystem auf.
+Der Energieträger Erdgas ist aufgrund der vergleichsweise günstigen Kosten, der einfachen Speicherung und der hohen Flexibilität zur Anpassung der Angebotskurve an die momentane Nachfrage für das Gesamtsystem aus ökonomischer Sicht lukrativ. 
 
-\newpage
-Anhand der durchgeführten Simulation eines nationalen Energiesystems können erste Erkenntnisse zu einem Szenario mit einem Energiebedarf von Strom und Wasserstoff und Verwendung aller möglicher Komponenten zur Erzeugung erneuerbarer Energie und Übertragungsmöglichkeiten gezogen werden.
+Mit steigendem Reduktionsziel können die erneuerbaren Erzeugungsanlagen aufgrund fehlender Flexibilität die Deckung der Nachfrage nicht mehr gewährleisten und es muss Biogas eingesetzt werden. Dieses verfügt über ähnliche Eigenschaften wie Erdgas, ist jedoch doppelt so teuer. Um zusätzliche Flexibilität bereitzustellen, werden Batteriespeicher und Pumpspeicherkraftwerke eingesetzt. Aufgrund der hohen Kosten können diese nicht die notwendige Kapazität für Reduktionsfälle >= 90 \% bereitstellen.
+Hierfür müssen zusätzlich Elektrolyseure als Flexsumer eingesetzt werden. Durch Salzkavernenspeicher kann die Wasserstofferzeugung von der Nachfrage entkoppelt werden und so für das Stromnetz Flex\-ibilität bereitstellen.  
+
+In dem vorliegenden Energiemodell wird kein Power-to-Gas-to-Power eingesetzt. Die großen Salzkavernen könnten viel Energie speichern, jedoch ist der Wirkungsgrad mit ca. 44 \% gering und die Kosten sind deshalb hoch. Die Betriebskosten von Brennstoffzellen sind ebenfalls so hoch, dass diese nicht eingesetzt werden. 
+
+Anstelle des weiteren Ausbaus von Speichersystemen ist es günstiger erneuerbare Erzeugungsanlagen über Bedarf auszubauen. Im 100 \% Reduktionsfall wird dies besonders durch den massiven Ausbau von Photovoltaikanlagen deutlich. Während diese Anlagen im Reduktionsfall 90 \% zu 99,5 \% ausgenutzt wurden, werden diese in einem CO2-neutralen Energiesystem nur zu 90,1 \% ausgenutzt.  
+
+Ohne CO2 Reduktionsziel würde das modellierte Energiesystem nach Optimierung der Gesamtkosten 40,6 Mrd. € pro Jahr kosten und 144,2 Mio. Tonnen CO2 ausstoßen. Das CO2 neutrale Energiesystem würde nur 30 \% mehr (52,78 Mrd. €) pro Jahr. Aus ökonomischer Sicht .... \todo{ist uns das zu viel oder zu wenig?}
+
+Neben der ökonomischen Sichtweise muss auch die Machbarkeit in Betracht gezogen werden.
+Ein Ausbau der maximalen Kapazitäten sowohl bei Wind Offshore und Photovoltaik bis zum Jahr 2050 erscheinen angesichts des heutigen Fortschritts von \todo{Fakten} für \todo{Wahrscheinlich oder Unwahrscheinlich}.
+\todo{Wie sieht das mit den Speichern aus? Sind Salzkarvernen in dem Umfang bis 2050 realisiert?}
+
+Neben dem in dieser Projektarbeit untersuchten Energiesystem sind viele weitere Energiesysteme mit unterschiedlichen Energieträgern und unterschiedlichen Bedürfnissen vorstellbar. 
+\todo{Allgemeiner Abgang, wie cool FINE ist? Oder nur Referenz zu den anderen Gruppen? Oder machen wir irgendwas ganz anderes?}
 
 Stichpunkte:
 \begin{itemize}
@@ -13,17 +24,12 @@ Stichpunkte:
   \item Biogas ist hierbei besonders wichtig, da dies genau wie Speicher dem Energiesystem Flexibilität verleiht
   \item In allen Reduktionsfällen kann auf Power-to-Gas-to-Power verzichtet werden. Es ist keine Rückverstromung => Zwischenfazit: Biogas, Stromspeicher und eine flexible Elektrolyse bringen ausreichend Flexibilität ins Energienetz
   \item 100 \% Reduktion möglich. Es gibt eine expotentielle Kostenkurve, dennoch vertretbare Gesamtkosten
-  \item Vergleich der Kosten zwischen 0 und 100 \% Reduktion
+  \item Vergleich der Kosten zwischen 0 und 100 \% Reduktion \todo{Später}
   \item Abwägung welcher Reduktionsfall im Vergleich zu den Kosten am sinnvollsten wäre?
   \item Umsetzbarkeit prüfen? Stehen wir wirklich in 30 Jahren bei Wasserstoff? Was macht der heutige Ausbau von EE? 
 \end{itemize}
 
 \todo{Im Fazit sollten wir noch einbauen, dass die Auslegungen/Maßnahmen Infrastruktur in den einzelnen Restriktionen zum Teil nicht für alle geeignet sind und es sinn macht heute sich an einem höheren RestriktionsZiel bezüglich dem zukünftigen Energiemodell zu orientieren.}
 
-\todo{Etwas von oben übernehmen}
 
 \todo{Welche Reduktion kann unser Energiesystem möglichst gut erreichen? Abwägung Reduktion/Kosten}
-
-
-
-Die gewonnenen Erkenntnisse können mit anderen Simulationen, die andere Komponenten verwenden, hinsichtlich ihrer Gesamtkosten und Machbarkeit verglichen werden.
