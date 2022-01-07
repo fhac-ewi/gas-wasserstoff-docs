@@ -1,16 +1,16 @@
 \section{Modellbeschreibung}
 \label{chap:modellbeschreibung}
-In diesem Kapitel wird das Energiesystemmodell für Deutschland bestehend aus Strom- und Gasinfrastrukturen eingeführt, welches im Rahmen dieser Projektarbeit hinsichtlich der Kosten unter Berücksichtigung verschiedener CO2-Reduktionsziele für das Jahr 2050 optimiert wird. In Tabelle \ref{tab:systemdesign2} sind die verwendeten Komponenten für das Energiesystemmodell ersichtlich.
+In diesem Kapitel wird das Energiesystemmodell für Deutschland bestehend aus Strom- und Gasinfrastrukturen eingeführt, welches im Rahmen dieser Projektarbeit hinsichtlich der Kosten unter Berücksichtigung verschiedener CO\textsubscript{2}-Reduktionsziele für das Jahr 2050 optimiert wird. In Tabelle \ref{tab:systemdesign2} sind die verwendeten Komponenten für das Energiesystemmodell ersichtlich.
 
 \begin{table}[ht!]
     \centering
     \begin{tabular}{|lcll|}
         \hline
-        \multicolumn{1}{|l|}{Erzeugung (EE)} & \multicolumn{1}{l|}{Wind Onshore} & \multicolumn{1}{l|}{Wind Offshore} & Photovoltaik \\ \hline
-        \multicolumn{1}{|l|}{Stromnetz AC}     & \multicolumn{3}{c|}{vorhanden}                \\ \hline
-        \multicolumn{1}{|l|}{Stromnetz DC}     & \multicolumn{3}{c|}{vorhanden}                \\ \hline
-        \multicolumn{1}{|l|}{H2 - Pipeline}    & \multicolumn{3}{c|}{vorhanden}                \\ \hline
-        \multicolumn{1}{|l|}{Endenergiebedarf} & \multicolumn{3}{c|}{Strom und H2} \\ \hline
+        \multicolumn{1}{|l|}{\textbf{Erzeugung (EE)}} & \multicolumn{1}{l|}{Wind Onshore} & \multicolumn{1}{l|}{Wind Offshore} & Photovoltaik \\ \hline
+        \multicolumn{1}{|l|}{\textbf{Stromnetz AC}}     & \multicolumn{3}{c|}{vorhanden}                \\ \hline
+        \multicolumn{1}{|l|}{\textbf{Stromnetz DC}}     & \multicolumn{3}{c|}{vorhanden}                \\ \hline
+        \multicolumn{1}{|l|}{\textbf{H2 - Pipeline}}    & \multicolumn{3}{c|}{vorhanden}                \\ \hline
+        \multicolumn{1}{|l|}{\textbf{Endenergiebedarf}} & \multicolumn{3}{c|}{Strom und H2} \\ \hline
     \end{tabular}
     \caption{Komponentenauswahl des Energiesystems für Gruppe 3}
     \label{tab:systemdesign2}
@@ -20,9 +20,9 @@ In diesem Kapitel wird das Energiesystemmodell für Deutschland bestehend aus St
 Die Daten für das Energiesystemmodell in dem Betrachtungszeitraum \textit{01. Januar 2050} bis \textit{31. Dezember 2050} stammen aus dem Beispiel ``Multi-regional Energy System Workflow'' des vom Institut IEK3 des Forschungszentrums Jülichs entwickelten Python-Framework FINE. \cite{WELDER20181130}
 Mit Hilfe des Frameworks FINE wird im weiteren Verlauf dieser Arbeit die Modellierung des Jahres 2050 in stündlicher Auflösung und Optimierung hinsichtlich der Gesamtkosten unter Einhaltung der gegebenen Rahmenbedingungen durchgeführt.
 
-\tinyimage{DEinCluster.png}{Deutschland in 8 Cluster aufgeteilt}
+\tinyimage{DEinCluster.png}{Deutschland in acht Cluster aufgeteilt}
 
-Das Modell bezieht sich ausschließlich auf die Region Deutschland. Wie in Abbildung \ref{image:DEinCluster.png} erkennbar ist, wird Deutschland in acht Cluster unterteilt, welche sich durch unterschiedliche Kapazitätsgrenzen und ggf. Lastgänge für alle Komponenten zur Erzeugung, Umwandlung, Speicherung unterscheiden. Beispielsweise kann in Cluster vier, welches im Süden von Deutschland liegt, keine Offshore Windparks gebaut werden, da dieses Cluster keinen Zugang zum Meer hat. 
+Das Modell bezieht sich ausschließlich auf die Region Deutschland. Wie in Abbildung \ref{image:DEinCluster.png} erkennbar ist, wird Deutschland in acht Cluster unterteilt, welche sich durch unterschiedliche Kapazitätsgrenzen und ggf. Lastgänge für alle Komponenten zur Erzeugung, Umwandlung und Speicherung \todo{kein Transport?} unterscheiden. Beispielsweise kann in Cluster 4, welches im Süden von Deutschland liegt, keine Offshore Windparks gebaut werden, da dieses Cluster keinen Zugang zum Meer hat. 
 
 Bei der Modellierung muss in jedem Cluster der Energiebedarf von Strom und Wasserstoff zu jedem Zeitpunkt gedeckt sein. Für die Übertragung von Strom und Wasserstoff zwischen verschiedenen Clustern müssen Übertragungsnetze bzw. Pipelines mit entsprechenden Kapazitäten vorhanden sein. 
 
@@ -30,22 +30,22 @@ Nachfolgend wird auf die verwendeten Komponenten des Energiesystemmodells inklus
 Um die Kosten einer Anlage zu berechnen, werden die Betriebskosten und die Annuität aufsummiert. Die Annuität wird aus den Investitionskosten, der Lebensdauer und dem Zinssatz berechnet. Für alle Anlagen wird ein Zinssatz von 8 \% angenommen.
  
 \subsection{Energieträger}
-In dem Energiesystem werden verschiedene Rohstoffe (Commodities) als Energieträger eingesetzt. Dazu zählen Strom, Wasserstoff, Methan (Erdgas) und Biogas. Weitere fossile Energieträger, wie Braunkohle, Steinkohle, Öl und Uran sind in diesem Modell nicht betrachtet, da diese durch gesetzliche Vorgaben bis zum Jahr 2050 nicht mehr zur Energiegewinnung eingesetzt werden dürfen. \cite{bund}
+In dem Energiesystem werden verschiedene Rohstoffe (Commodities) als Energieträger eingesetzt. Dazu zählen Strom, Wasserstoff, Methan (Erdgas)\todo{ich würde nur Erdgas schreiben, Methan ist zwar der Hauptbestandteil, ist aber auch in Biogas drin..} und Biogas. Weitere fossile Energieträger, wie Braunkohle, Steinkohle, Öl und Uran sind in diesem Modell nicht betrachtet, da diese durch gesetzliche Vorgaben bis zum Jahr 2050 nicht mehr zur Energiegewinnung eingesetzt werden dürfen. \cite{bund}
 
-Zusätzlich wird in dem Modell CO2 als Commodity betrachtet und durch ein jährliches Limit beschränkt. Der Ausgangswert für die verschiedenen Reduktionsfälle wurde im Jahr 1990 ermittelt und liegt bei 366 Mio. Tonnen pro Jahr. 
+Zusätzlich wird in dem Modell CO\textsubscript{2} als Commodity betrachtet und durch ein jährliches Limit beschränkt. Der Ausgangswert für die verschiedenen Reduktionsfälle wurde im Jahr 1990 ermittelt und liegt bei 366 Mio. Tonnen pro Jahr\todo{vllt Quelle?}. 
 
 
 \subsection{Energienachfrage}
-In dem Energiesystem wird ausschließlich Strom und Wasserstoff nachgefragt. Für beide Energieträger ist in jedem Cluster ein Lastgang in stündlicher Auflösung für das gesamte Jahr hinterlegt, der die Nachfrage in der jeweiligen Region bestmöglich abbildet. Der Abbildung \ref{image:Demand_electricity_C0_operation_0.8.png} kann exemplarisch das Lastprofil für Strom in Cluster Eins entnommen werden. 
+In dem Energiesystem wird ausschließlich Strom und Wasserstoff nachgefragt. Für beide Energieträger ist in jedem Cluster ein Lastgang in stündlicher Auflösung für das gesamte Jahr hinterlegt, der die Nachfrage in der jeweiligen Region bestmöglich abbildet. Der Abbildung \ref{image:Demand_electricity_C0_operation_0.8.png} kann exemplarisch das Lastprofil für Strom in Cluster 1 entnommen werden. 
 
 \smallimage{Demand_electricity_C0_operation_0.8.png}{Lastgang Stromnachfrage in Cluster Eins}
 
 \subsection{Energiegewinnung}
 Zur Energiegewinnung können in dem Modell verschiedene Quellen genutzt werden.
 
-Zum einen können bereits existierende Laufwasserkraftwerken mit Gesamtleistung von 3,8 GW zu geringen Betriebskosten von 790 Mio. € genutzt werden. Aufgrund der festen Betriebsrate (durch die Flüsse vorgegeben) können diese in dem Beispieljahr maximal 17.397 GWh Strom erzeugen.
+Zum einen können bereits existierende Laufwasserkraftwerken mit einer Gesamtleistung von 3,8 GW zu geringen Betriebskosten von 790 Mio. € genutzt werden. Aufgrund der festen Betriebsrate, die durch die Flüsse vorgegeben ist, können diese in dem Beispieljahr maximal 17.397 GWh Strom erzeugen.
 
-Deutschland verfügt bereits über eine funktionierende Infrastruktur für Erdgas. Bei der Modellierung kann auf diese Infrastruktur zurückgegriffen werden, indem der Energieträger Methan (Hauptbestandteil in Erdgas) durch Zukäufe importiert und anschließend in dem Energiesystem genutzt werden kann. Für das Modell wird angenommen, dass Methan in allen Clustern in unbegrenzter Menge zu einem Festpreis von 33.100 € je GWh LWH eingekauft werden kann.
+Deutschland verfügt bereits über eine funktionierende Infrastruktur für Erdgas. Bei der Modellierung kann auf diese Infrastruktur zurückgegriffen werden, indem der Energieträger Methan (Hauptbestandteil in Erdgas)\todo{Punkt oben - Erdgas} durch Zukäufe importiert und anschließend in dem Energiesystem genutzt werden kann. Für das Modell wird angenommen, dass Methan in allen Clustern in unbegrenzter Menge zu einem Festpreis von 33.100 € je GWh LWH eingekauft werden kann.
 
 Auch Biogas existiert bereits in Deutschland. In den verschiedenen Clustern gibt es unterschiedlich viele Biogasanlagen mit unterschiedlicher Leistung. Deshalb ist der Import von Biogas in jedem Zeitschritt je Cluster begrenzt. (vgl. Tabelle \ref{tab:biogasgas}) Die Kosten für den Import je GWh LWH Biogas liegen bei 54.090 €. 
 
@@ -60,7 +60,7 @@ Auch Biogas existiert bereits in Deutschland. In den verschiedenen Clustern gibt
     \label{tab:biogasgas}
 \end{table}
 
-Methan und Biogas können nicht direkt zur Deckung der Strom- bzw. Wasserstoffnachfrage eingesetzt werden, sondern müssen erst diese umgewandelt werden. Dazu können in diesem Modell verschiedene Umwandler genutzt werden, die in dem nachfolgenden Abschnitt beschrieben werden.
+Methan und Biogas können nicht direkt zur Deckung der Strom- bzw. Wasserstoffnachfrage eingesetzt werden, sondern müssen erst in diese umgewandelt werden. Dazu können in diesem Modell verschiedene Umwandler genutzt werden, die in dem nachfolgenden Abschnitt beschrieben werden.
 
 \begin{table}[ht!]
     \centering
@@ -76,18 +76,18 @@ Methan und Biogas können nicht direkt zur Deckung der Strom- bzw. Wasserstoffna
 \end{table}
 
 Eine weitere Möglichkeit zur Energiegewinnung von Strom sind erneuerbare Erzeugungsanlagen. In diesem Modell können Wind Onshore, Wind Offshore und Photovoltaikanlagen verwendet werden. Je Cluster wird die maximal installierbare Kapazität vorgegeben. 
-Anders als konventionelle Kraftwerke können erneuerbare Erzeugungsanlagen nicht selbstbestimmt produzieren, sondern sind auf äußere Einflüsse (vorherrschende Winde bzw. Sonneneinstrahlung) angewiesen. Um dies in dem Modell abzubilden, wird je Cluster und Anlagentyp eine maximale Betriebsrate in \% für jeden Zeitschritt festgelegt. Zusätzlich werden je Anlage ökonomische Parameter zur Bestimmung der Gesamtkosten in Abhängigkeit der installierten Kapazität angegeben. Diese können Tabelle \ref{tab:param-energie} entnommen werden. Die Investitionskosten und Betriebskosten verstehen sich je 1 GW installierte Leistung.
+Anders als konventionelle Kraftwerke können erneuerbare Erzeugungsanlagen nicht selbstbestimmt produzieren, sondern sind auf äußere Einflüsse (vorherrschende Winde bzw. Sonneneinstrahlung) angewiesen. Um dies in dem Modell abzubilden, wird je Cluster und Anlagentyp eine maximale Betriebsrate in \% für jeden Zeitschritt festgelegt. Zusätzlich werden je Anlage ökonomische Parameter zur Bestimmung der Gesamtkosten in Abhängigkeit der installierten Kapazität angegeben. Diese können Tabelle \ref{tab:param-energie} entnommen werden. Die Investitionskosten und Betriebskosten verstehen sich auf je 1 GW installierte Leistung.
 
 \todo{Ggf. noch ein Bild zur Energiegewinnung und die Tabelle öko Param wieder ans Ende stellen?}
 
 \subsection{Energieumwandlung}
-Zur Energieumwandlung zwischen den Energieträgern werden Umwandlungsanlagen benötigt. So kann beispielsweise durch ein GuD-Kraftwerk Methan in Strom umgewandelt werden. In Tabelle \ref{tab:param-umwandlung-tec} sind die Wirkungsgrade typischer Anlagen und sowie die dabei freigesetzte Menge CO2 ersichtlich. Diese technischen Parameter werden bei der Modellierung berücksichtigt.
+Zur Energieumwandlung zwischen den Energieträgern werden Umwandlungsanlagen benötigt. So kann beispielsweise durch ein GuD-Kraftwerk Methan\todo{s.o.} in Strom umgewandelt werden. In Tabelle \ref{tab:param-umwandlung-tec} sind die Wirkungsgrade typischer Anlagen und sowie die dabei freigesetzte Menge CO\textsubscript{2} ersichtlich. Diese technischen Parameter werden bei der Modellierung berücksichtigt.
 
 \begin{table}[ht!]
     \centering
     \begin{tabular}{|l|cccc|}
         \hline
-        \multirow{2}{*}{}        & \multicolumn{2}{c|}{\textbf{Umwandlung}}                              & \multicolumn{1}{c|}{\multirow{2}{*}{\textbf{Wirkungsgrad}}} & \multicolumn{1}{l|}{\multirow{2}{*}{\textbf{CO2 Ausstoß}}} \\
+        \multirow{2}{*}{}        & \multicolumn{2}{c|}{\textbf{Umwandlung}}                              & \multicolumn{1}{c|}{\multirow{2}{*}{\textbf{Wirkungsgrad}}} & \multicolumn{1}{l|}{\multirow{2}{*}{\textbf{CO\textsubscript{2} Ausstoß}}} \\
                                  & \multicolumn{1}{c}{\textbf{von}} & \multicolumn{1}{c|}{\textbf{nach}} & \multicolumn{1}{c|}{}                                       & \multicolumn{1}{l|}{}                             \\ \hline
         \textbf{GuD-Kraftwerk}   & \multicolumn{4}{l|}{}                                                                                                                                                                   \\ \hline
         \textbf{\hspace{3mm} Methan}          & \multicolumn{1}{c|}{Methan}      & \multicolumn{1}{c|}{Strom}         & \multicolumn{1}{c|}{60 \%}                                  & 335 Tonnen                                        \\ \hline
@@ -100,14 +100,14 @@ Zur Energieumwandlung zwischen den Energieträgern werden Umwandlungsanlagen ben
     \caption{Technische Parameter für Energieumwandlungsanlagen}
     \label{tab:param-umwandlung-tec}
 \end{table}
-
-Lediglich bei der Verbrennung von Methan wird klimaschädliches CO2 freigesetzt. Für die Erzeugung von 1 GWh elektrischer Energie (Strom) werden 335 Tonnen CO2 freigesetzt. Bei der Verbrennung von Biogas wird auch CO2 freigesetzt, jedoch wurde dieses zuvor von den Pflanzen gebunden. Deshalb ist diese Umwandlung CO2 neutral \cite{bdew43}. 
-Bei der Verbrennung von Wasserstoff wird kein CO2 ausgestoßen \cite{bdew42}. 
+\todo{Unersichtlich was alles zu GuD-Kraftwerk gehört!}
+Lediglich bei der Verbrennung von Methan wird klimaschädliches CO\textsubscript{2} freigesetzt. Für die Erzeugung von 1 GWh elektrischer Energie (Strom) werden 335 Tonnen CO\textsubscript{2} freigesetzt. Bei der Verbrennung von Biogas wird auch CO\textsubscript{2} freigesetzt, jedoch wurde dieses zuvor von den Pflanzen gebunden. Deshalb ist diese Umwandlung CO\textsubscript{2}-neutral \cite{bdew43}. 
+Bei der Verbrennung von Wasserstoff wird kein CO\textsubscript{2} ausgestoßen \cite{bdew42}. 
 
 Neben den verschiedenen Gasanlagen, welche Gas in Strom umwandeln, stellt die Elektrolyse eine Möglichkeit zur Umwandlung von Strom in Wasserstoff zur Verfügung. Durch Brennstoffzellen ist zusätzlich eine Möglichkeit gegeben, um aus Wasserstoff Strom zu gewinnen.
 
 Die ökonomischen Parametern aller Umwandlungsanlagen können der Tabelle \ref{tab:param-umwandlung} entnommen werden.
-\begin{table}[ht!]
+\begin{table}[h!]
     \centering
     \begin{tabular}{|l|ccc|}
         \hline
@@ -124,12 +124,12 @@ Die ökonomischen Parametern aller Umwandlungsanlagen können der Tabelle \ref{t
 \end{table}
 
 \subsection{Energiespeicherung}
-Zu jedem Zeitschritt muss die Nachfrage durch ein Angebot gedeckt sein. Um dies zu gewährleisten werden je nach gewählten Erzeugungsanlagen Speicher zwingend benötigt.
+Zu jedem Zeitschritt muss die Nachfrage durch ein Angebot gedeckt sein. Um dies zu gewährleisten, werden je nach gewählten Erzeugungsanlagen Speicher zwingend benötigt.
 In dem Beispielszenario können drei Speicherarten verwendet werden:
 \begin{itemize}
-    \item \textbf{Batteriespeicher} (kurzfristig)\\Aufgrund der schnellen Ein/Ausspeicherraten, die eine vollständige Entladung innerhalb einer Stunde ermöglichen, eignet sich der Batteriespeicher für den schnellen Leistungsausgleich. Durch die hohen Investitionskosten pro Kapazität und der vergleichsweise hohen Selbstentladung von 3 \% eignet sich der Speicher besonders für den kurzfristigen Einsatz.
+    \item \textbf{Batteriespeicher} (kurzfristig)\\Aufgrund der schnellen Ein-/Ausspeicherraten, die eine vollständige Entladung innerhalb einer Stunde ermöglichen, eignet sich der Batteriespeicher für den schnellen Leistungsausgleich. Durch die hohen Investitionskosten pro Kapazität und der vergleichsweisen hohen Selbstentladung von 3 \% eignet sich der Speicher besonders für den kurzfristigen Einsatz.
     \item \textbf{Pumpspeicher} (mittelfristig)\\Eine vollständige Endladung des Speichers braucht ca. 6 Stunden. Der Speicher ist in dem Szenario bereits installiert.
-    \item \textbf{Salzkarvernenspeicher} (langfristig)\\Karvernenspeicher können verhältnismäßig viel Energie in Form von Gas speichern. Eine vollständige Entladung braucht ca. 20 Tage. Zudem gibt es (in unserem Beispiel) keine Selbstentladung, weshalb der Speicher für die langfristige Speicherung bestens geeignet ist.   
+    \item \textbf{Salzkavernenspeicher} (langfristig)\\Kavernenspeicher können verhältnismäßig viel Energie in Form von Gas speichern. Eine vollständige Entladung braucht ca. 20 Tage. Zudem gibt es (in unserem Beispiel) keine Selbstentladung, weshalb der Speicher für die langfristige Speicherung bestens geeignet ist.   
 \end{itemize}    
 
 Analog zu der Energieerzeugung können die Speicher mit einer maximalen Kapazität je Cluster installiert werden. Die ökonomischen Parameter können der Tabelle \ref{tab:param-speicherung} entnommen werden.
@@ -139,7 +139,7 @@ Analog zu der Energieerzeugung können die Speicher mit einer maximalen Kapazit�
     \begin{tabular}{|l|ccc|}
     \hline
                               & \multicolumn{1}{c|}{\textbf{Investition}} & \multicolumn{1}{c|}{\textbf{Betriebskosten}} & \textbf{Abschreibungsdauer} \\ \hline
-    \textbf{Salzkarvernen}    & \multicolumn{3}{c|}{}                                                                                                  \\ \hline
+    \textbf{Salzkavernen}    & \multicolumn{3}{c|}{}                                                                                                  \\ \hline
     \textbf{\hspace{3mm} Biogas}           & \multicolumn{1}{c|}{40 T €}               & \multicolumn{1}{c|}{10 T €}                  & 30 Jahre                    \\ \hline
     \textbf{\hspace{3mm} Wasserstoff}      & \multicolumn{1}{c|}{110 T €}              & \multicolumn{1}{c|}{570 T €}                 & 30 Jahre                    \\ \hline
     \textbf{Pumpspeicher}     & \multicolumn{1}{c|}{0 €}                  & \multicolumn{1}{c|}{153 T €}                 & -                           \\ \hline
@@ -153,7 +153,7 @@ Analog zu der Energieerzeugung können die Speicher mit einer maximalen Kapazit�
 In dem vorliegenden Modell wird für die Stromübertragung auf die bestehenden Wechsel\-stromnetz (AC) und Gleichstromnetze (DC) zurückgegriffen.
 Das AC Netz verbindet einige benachbarte Cluster miteinander und ermöglicht eine verlustfreie Übertragung über kurze Strecken. Das DC Netz verbindet entfernte Cluster miteinander und kann dadurch Strom über weite Strecken übertragen. Dies ist jedoch nicht verlustfrei möglich.
 
-Neben Strom können die Energieträger Biogas und Wasserstoff mithilfe von zwei voneinander getrennten Pipeline-Netzen theoretisch zwischen allen benachbarten Clustern verlustfrei übertragen werden. Da diese Netze zum heutigen Zeitpunkt nicht existieren, können diese bei der Modellierung entsprechend der benötigten Kapazitäten installiert werden. Dabei gilt es jedoch zu beachten, dass zwischen zwei Regionen Pipelines bis zu einer maximalen Kapazität von 15 GW verwendet werden dürfen und alle Übertragungsstrecken in Summe die 300 GW nicht zu übersteigen dürfen. Die Investitionskosten für eine Wasserstoff Pipeline zwischen zwei Clustern betragen einmalig 330.000 € plus 177.000 € pro Kilometer. Die Biogas Pipelines kosten einmalig 314.0000 € plus 37.000 € € pro Kilometer. Beide Pipelines haben eine Lebensdauer von 40 Jahre und haben keine operativen Kosten.
+Neben Strom können die Energieträger Biogas und Wasserstoff mithilfe von zwei voneinander getrennten Pipeline-Netzen theoretisch zwischen allen benachbarten Clustern verlustfrei übertragen werden. Da diese Netze zum heutigen Zeitpunkt nicht existieren, können diese bei der Modellierung entsprechend der benötigten Kapazitäten installiert werden. Dabei gilt es jedoch zu beachten, dass zwischen zwei Regionen Pipelines bis zu einer maximalen Kapazität von 15 GW verwendet werden dürfen und alle Übertragungsstrecken in Summe 300 GW nicht zu übersteigen dürfen. Die Investitionskosten für eine Wasserstoff Pipeline zwischen zwei Clustern betragen einmalig 330.000 € plus 177.000 € pro Kilometer. Die Biogas Pipelines kosten einmalig 314.0000 € plus 37.000 € € pro Kilometer. Beide Pipelines haben eine Lebensdauer von 40 Jahre und haben keine operativen Kosten.
 
-In der Modellierung wird die Übertragung von Methan zwischen den Regionen nicht berück\-sichtigt. Dies ist damit zu begründen, dass Methan in jedem Cluster importiert werden kann. Eine Berücksichtigung der Übertragung zwischen den Clustern kann deshalb bei der Modellierung vernachlässigt werden.
+In der Modellierung wird die Übertragung von Methan\todo{s.o.} zwischen den Regionen nicht berück\-sichtigt. Dies ist damit zu begründen, dass Methan in jedem Cluster importiert werden kann. Eine Berücksichtigung der Übertragung zwischen den Clustern kann deshalb bei der Modellierung vernachlässigt werden.
 
