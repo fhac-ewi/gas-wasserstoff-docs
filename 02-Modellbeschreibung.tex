@@ -30,7 +30,7 @@ Nachfolgend wird auf die verwendeten Komponenten des Energiesystemmodells inklus
 Um die Kosten einer Anlage zu berechnen, werden die Betriebskosten und die Annuität aufsummiert. Die Annuität wird aus den Investitionskosten, der Lebensdauer und dem Zinssatz berechnet. Für alle Anlagen wird ein Zinssatz von 8 \% angenommen.
  
 \subsection{Energieträger}
-In dem Energiesystem werden verschiedene Rohstoffe (Commodities) als Energieträger eingesetzt. Dazu zählen Strom, Wasserstoff, Methan (Erdgas)\todo{ich würde nur Erdgas schreiben, Methan ist zwar der Hauptbestandteil, ist aber auch in Biogas drin..} und Biogas. Weitere fossile Energieträger, wie Braunkohle, Steinkohle, Öl und Uran sind in diesem Modell nicht betrachtet, da diese durch gesetzliche Vorgaben bis zum Jahr 2050 nicht mehr zur Energiegewinnung eingesetzt werden dürfen. \cite{bund}
+In dem Energiesystem werden verschiedene Rohstoffe (Commodities) als Energieträger eingesetzt. Dazu zählen Strom, Wasserstoff, Methan (Erdgas) und Biogas. Weitere fossile Energieträger, wie Braunkohle, Steinkohle, Öl und Uran sind in diesem Modell nicht betrachtet, da diese durch gesetzliche Vorgaben bis zum Jahr 2050 nicht mehr zur Energiegewinnung eingesetzt werden dürfen. \cite{bund}
 
 Zusätzlich wird in dem Modell CO\textsubscript{2} als Commodity betrachtet und durch ein jährliches Limit beschränkt. Der Ausgangswert für die verschiedenen Reduktionsfälle wurde im Jahr 1990 ermittelt und liegt bei 366 Mio. Tonnen pro Jahr\todo{vllt Quelle?}. 
 
@@ -45,7 +45,7 @@ Zur Energiegewinnung können in dem Modell verschiedene Quellen genutzt werden.
 
 Zum einen können bereits existierende Laufwasserkraftwerken mit einer Gesamtleistung von 3,8 GW zu geringen Betriebskosten von 790 Mio. € genutzt werden. Aufgrund der festen Betriebsrate, die durch die Flüsse vorgegeben ist, können diese in dem Beispieljahr maximal 17.397 GWh Strom erzeugen.
 
-Deutschland verfügt bereits über eine funktionierende Infrastruktur für Erdgas. Bei der Modellierung kann auf diese Infrastruktur zurückgegriffen werden, indem der Energieträger Methan (Hauptbestandteil in Erdgas)\todo{Punkt oben - Erdgas} durch Zukäufe importiert und anschließend in dem Energiesystem genutzt werden kann. Für das Modell wird angenommen, dass Methan in allen Clustern in unbegrenzter Menge zu einem Festpreis von 33.100 € je GWh LWH eingekauft werden kann.
+Deutschland verfügt bereits über eine funktionierende Infrastruktur für Erdgas. Bei der Modellierung kann auf diese Infrastruktur zurückgegriffen werden, indem der Energieträger Methan (Hauptbestandteil in Erdgas) durch Zukäufe importiert und anschließend in dem Energiesystem genutzt werden kann. Für das Modell wird angenommen, dass Methan in allen Clustern in unbegrenzter Menge zu einem Festpreis von 33.100 € je GWh LWH eingekauft werden kann.
 
 Auch Biogas existiert bereits in Deutschland. In den verschiedenen Clustern gibt es unterschiedlich viele Biogasanlagen mit unterschiedlicher Leistung. Deshalb ist der Import von Biogas in jedem Zeitschritt je Cluster begrenzt. (vgl. Tabelle \ref{tab:biogasgas}) Die Kosten für den Import je GWh LWH Biogas liegen bei 54.090 €. 
 
@@ -81,7 +81,7 @@ Anders als konventionelle Kraftwerke können erneuerbare Erzeugungsanlagen nicht
 \todo{Ggf. noch ein Bild zur Energiegewinnung und die Tabelle öko Param wieder ans Ende stellen?}
 
 \subsection{Energieumwandlung}
-Zur Energieumwandlung zwischen den Energieträgern werden Umwandlungsanlagen benötigt. So kann beispielsweise durch ein GuD-Kraftwerk Methan\todo{s.o.} in Strom umgewandelt werden. In Tabelle \ref{tab:param-umwandlung-tec} sind die Wirkungsgrade typischer Anlagen und sowie die dabei freigesetzte Menge CO\textsubscript{2} ersichtlich. Diese technischen Parameter werden bei der Modellierung berücksichtigt.
+Zur Energieumwandlung zwischen den Energieträgern werden Umwandlungsanlagen benötigt. So kann beispielsweise durch ein GuD-Kraftwerk Methan in Strom umgewandelt werden. In Tabelle \ref{tab:param-umwandlung-tec} sind die Wirkungsgrade typischer Anlagen und sowie die dabei freigesetzte Menge CO\textsubscript{2} ersichtlich. Diese technischen Parameter werden bei der Modellierung berücksichtigt.
 
 \begin{table}[ht!]
     \centering
@@ -155,5 +155,5 @@ Das AC Netz verbindet einige benachbarte Cluster miteinander und ermöglicht ein
 
 Neben Strom können die Energieträger Biogas und Wasserstoff mithilfe von zwei voneinander getrennten Pipeline-Netzen theoretisch zwischen allen benachbarten Clustern verlustfrei übertragen werden. Da diese Netze zum heutigen Zeitpunkt nicht existieren, können diese bei der Modellierung entsprechend der benötigten Kapazitäten installiert werden. Dabei gilt es jedoch zu beachten, dass zwischen zwei Regionen Pipelines bis zu einer maximalen Kapazität von 15 GW verwendet werden dürfen und alle Übertragungsstrecken in Summe 300 GW nicht zu übersteigen dürfen. Die Investitionskosten für eine Wasserstoff Pipeline zwischen zwei Clustern betragen einmalig 330.000 € plus 177.000 € pro Kilometer. Die Biogas Pipelines kosten einmalig 314.0000 € plus 37.000 € € pro Kilometer. Beide Pipelines haben eine Lebensdauer von 40 Jahre und haben keine operativen Kosten.
 
-In der Modellierung wird die Übertragung von Methan\todo{s.o.} zwischen den Regionen nicht berück\-sichtigt. Dies ist damit zu begründen, dass Methan in jedem Cluster importiert werden kann. Eine Berücksichtigung der Übertragung zwischen den Clustern kann deshalb bei der Modellierung vernachlässigt werden.
+In der Modellierung wird die Übertragung von Methan zwischen den Regionen nicht berück\-sichtigt. Dies ist damit zu begründen, dass Methan in jedem Cluster importiert werden kann. Eine Berücksichtigung der Übertragung zwischen den Clustern kann deshalb bei der Modellierung vernachlässigt werden.
 
